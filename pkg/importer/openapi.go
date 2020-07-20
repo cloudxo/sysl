@@ -31,7 +31,7 @@ func NewOpenAPILoader(logger *logrus.Logger, fs afero.Fs) *openapi3.SwaggerLoade
 	loader.LoadSwaggerFromURIFunc = func(
 		loader *openapi3.SwaggerLoader, url *url.URL) (swagger *openapi3.Swagger, err error) {
 		if url.Host == "" && url.Scheme == "" {
-			logger.Infof("Loading openapi ref: %s", url.String())
+			logger.Debugf("Loading openapi ref: %s", url.String())
 			data, err := afero.ReadFile(fs, pathFromURL(url))
 			if err != nil {
 				return nil, err
@@ -303,7 +303,7 @@ func (o *openapiv3) buildField(name string, prop *openapi3.SchemaRef) Field {
 func attrsForStrings(schema *openapi3.Schema) []string {
 	var attrs []string
 	if r := schema.Pattern; r != "" {
-		attrs = append(attrs, fmt.Sprintf(`regex="%s"`, r))
+		attrs = append(attrs, fmt.Sprintf(`regex="%s"`, getSyslSafeName(r)))
 	}
 	if e := schema.Enum; len(e) != 0 && false { // remove the `&& false` when enum_values are added
 		var vals []string
@@ -388,7 +388,7 @@ func (o *openapiv3) buildEndpoint(path string, item *openapi3.PathItem) []Method
 				ep.Params.Add(param)
 			}
 		}
-		typePrefix := convertToSyslSafe(cleanEndpointPath(path)) + "_"
+		typePrefix := getSyslSafeName(convertToSyslSafe(cleanEndpointPath(path))) + "_"
 		for statusCode, resp := range op.Responses {
 			text := "error"
 			if statusCode[0] == '2' {
