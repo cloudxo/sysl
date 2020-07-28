@@ -1,0 +1,1060 @@
+{
+  "namespace": "com.anz.ocv.pe",
+  "name": "OCVEvent",
+  "type": "record",
+  "fields": [
+    {
+      "name": "header",
+      "type": {
+        "type": "record",
+        "name": "Header",
+        "fields": [
+          {
+            "name": "eventUUID",
+            "type": "string",
+            "doc": "A unique identifier for this particular event.  The event producer allocates the eventId. Has to be in UUID v4 format (i.e. 535c3d5d-fc48-4f08-b85c-1a986e9d1234). OCV Event consumers should not use this though, instead they could use correlationId attribute for uniquely identifying an event"
+          },
+          {
+            "name": "ocvID",
+            "type": "string",
+            "doc": "A unique OCV identifier for a party. A party can have multiple records in OCV. This and 'subject' would uniquely identify a Party Record within OCV"
+          },
+          {
+            "name": "subject",
+            "type": {
+              "type": "record",
+              "name": "Subject",
+              "doc": "The externalPartyIdentifier is an identifier which is NOT a Party Id, but can be used to correlate the Party to a Party Id. For example, a CRN could be used to correlate the customer, or a UUID, or a CAP CIS Id",
+              "fields": [
+                {
+                  "name": "subjectType",
+                  "type": "string",
+                  "doc": "The type of identifier, such as CRN, or OCV Id, or CAPCISId"
+                },
+                {
+                  "name": "subjectId",
+                  "type": "string",
+                  "doc": "The actual value of the identifier - that would be the actual CRN, for example"
+                }
+              ]
+            },
+            "doc": "A party can have multiple records in OCV. This and 'ocvID' would uniquely identify a Party Record within OCV"
+          },
+          {
+            "name": "source",
+            "doc": "The service identifier that produced the event",
+            "type": "string"
+          },
+          {
+            "name": "occurrenceDateTime",
+            "doc": "The date and time, to millisecond precision, that this event occurred",
+            "type": {
+              "logicalType": "timestamp-millis",
+              "type": "long",
+              "doc": "A timestamp-millis logical type annotates an Avro long, where the long stores the number of milliseconds from the unix epoch, 1 January 1970 00:00:00.000 UTC"
+            }
+          },
+          {
+            "name": "traceId",
+            "type": "string"
+          },
+          {
+            "name": "spanId",
+            "type": "string"
+          },
+          {
+            "name": "parentSpanId",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null
+          },
+          {
+            "name": "correlationId",
+            "doc": "This would be the Global Sequence Id, unique to each event generated out of MDM",
+            "type": "long"
+          },
+          {
+            "name": "hierarchy",
+            "doc": "Business Event Type Hierarchy, i.e. AU/RETAIL/CARDS",
+            "type": "string"
+          },
+          {
+            "name": "ignore",
+            "doc": "Event should be ignored by the consumers",
+            "type": [
+              "null",
+              "boolean"
+            ],
+            "default": null
+          },
+          {
+            "name": "eventType",
+            "doc": "Event Data would be specific for a eventType so this field would help identify what to expect in Event Data",
+            "type": "string"
+          },
+          {
+            "name": "expiryDateTime",
+            "doc": "The event should be ignored by consumers after the specified expire date and time",
+            "type": [
+              "null",
+              "long"
+            ],
+            "default": null
+          },
+          {
+            "name": "survivorParty",
+            "type": [
+              "null",
+              {
+                "type": "record",
+                "name": "SurvivorParty",
+                "doc": "Survivor Party Details for the Victim party",
+                "fields": [
+                  {
+                    "name": "ocvID",
+                    "type": "string",
+                    "doc": "A unique OCV identifier for the surviving party"
+                  },
+                  {
+                    "name": "subject",
+                    "type": "Subject"
+                  }
+                ]
+              }
+            ],
+            "default": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "OcvTags",
+      "type": [
+        "null",
+        {
+          "type": "array",
+          "items": "string"
+        }
+      ],
+      "default": null,
+      "doc": "An array of strings that provide further context to the content of this specific message. For example, if the party is ANZx customer, events for that party would have an 'ANZx' tag"
+    },
+    {
+      "name": "eventData",
+      "type": {
+        "type": "record",
+        "name": "EventData",
+        "fields": [
+          {
+            "name": "performedAction",
+            "type": {
+              "type": "enum",
+              "name": "PerformedAction",
+              "symbols": [
+                "add",
+                "update",
+                "delete",
+                "none"
+              ]
+            }
+          },
+          {
+            "name": "lastUpdatedDate",
+            "type": "string",
+            "doc": "The date and time, to millisecond precision, the record was updated last"
+          },
+          {
+            "name": "lastUpdatedBy",
+            "type": "string",
+            "doc": "The person / account who last updated the record"
+          },
+          {
+            "name": "version",
+            "type": "int",
+            "doc": "Party level sequence Id. This can help identify missed events, if any"
+          },
+          {
+            "name": "createdDate",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null,
+            "doc": "The date and time, to millisecond precision, the record was first created"
+          },
+          {
+            "name": "sinceDate",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null
+          },
+          {
+            "name": "leftDate",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null
+          },
+          {
+            "name": "partyStatus",
+            "type": [
+              "null",
+              "string"
+            ],
+            "default": null,
+            "doc": "Indicator whether a Party is Active / Inactive / Deceased / etc"
+          },
+          {
+            "name": "partyType",
+            "type": [
+              "null",
+              {
+                "type": "record",
+                "name": "Organisation",
+                "fields": [
+                  {
+                    "name": "organisationType",
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "default": null,
+                    "doc": "Type of Organisation"
+                  },
+                  {
+                    "name": "industry",
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "default": null,
+                    "doc": "Type of Industry the Organisation is in"
+                  },
+                  {
+                    "name": "establishedDate",
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "default": null
+                  },
+                  {
+                    "name": "kycVerificationLevel",
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "default": null
+                  },
+                  {
+                    "name": "kycStatus",
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "default": null
+                  },
+                  {
+                    "name": "bankruptDate",
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "default": null
+                  },
+                  {
+                    "name": "organisationNames",
+                    "type": [
+                      "null",
+                      {
+                        "type": "array",
+                        "items": {
+                          "name": "OrganisationName",
+                          "type": "record",
+                          "fields": [
+                            {
+                              "name": "performedAction",
+                              "type": "PerformedAction"
+                            },
+                            {
+                              "name": "nameUsageType",
+                              "type": "string",
+                              "doc": "This would be the business key for uniquely identifying Organisation Name business object"
+                            },
+                            {
+                              "name": "orgName",
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "default": null
+                            },
+                            {
+                              "name": "startDate",
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "default": null
+                            },
+                            {
+                              "name": "endDate",
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "default": null
+                            },
+                            {
+                              "name": "source",
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "default": null
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "default": null
+                  }
+                ]
+              },
+              {
+                "type": "record",
+                "name": "Person",
+                "fields": [
+                  {
+                    "name": "maritalStatus",
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "default": null
+                  },
+                  {
+                    "name": "employeeIndicator",
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "default": null
+                  },
+                  {
+                    "name": "employerName",
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "default": null
+                  },
+                  {
+                    "name": "birthDate",
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "default": null
+                  },
+                  {
+                    "name": "deceasedDate",
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "default": null
+                  },
+                  {
+                    "name": "bankruptDate",
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "default": null
+                  },
+                  {
+                    "name": "occupation",
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "default": null
+                  },
+                  {
+                    "name": "kycStatus",
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "default": null
+                  },
+                  {
+                    "name": "kycVerificationLevel",
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "default": null
+                  },
+                  {
+                    "name": "displayName",
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "default": null
+                  },
+                  {
+                    "name": "gender",
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "default": null,
+                    "doc": "Example: M, F"
+                  },
+                  {
+                    "name": "personNames",
+                    "type": [
+                      "null",
+                      {
+                        "type": "array",
+                        "items": {
+                          "name": "PersonName",
+                          "type": "record",
+                          "fields": [
+                            {
+                              "name": "performedAction",
+                              "type": "PerformedAction"
+                            },
+                            {
+                              "name": "nameUsageType",
+                              "type": "string",
+                              "doc": "This would be the business key for uniquely identifying Person Name business object"
+                            },
+                            {
+                              "name": "prefix",
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "default": null
+                            },
+                            {
+                              "name": "suffix",
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "default": null
+                            },
+                            {
+                              "name": "givenNameOne",
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "default": null
+                            },
+                            {
+                              "name": "givenNameTwo",
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "default": null
+                            },
+                            {
+                              "name": "givenNameThree",
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "default": null
+                            },
+                            {
+                              "name": "givenNameFour",
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "default": null
+                            },
+                            {
+                              "name": "lastName",
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "default": null
+                            },
+                            {
+                              "name": "startDate",
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "default": null
+                            },
+                            {
+                              "name": "endDate",
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "default": null
+                            },
+                            {
+                              "name": "source",
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "default": null
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "default": null
+                  }
+                ]
+              }
+            ],
+            "default": null
+          },
+          {
+            "name": "identifiers",
+            "type": [
+              "null",
+              {
+                "type": "array",
+                "items": {
+                  "name": "Identifier",
+                  "type": "record",
+                  "fields": [
+                    {
+                      "name": "performedAction",
+                      "type": "PerformedAction"
+                    },
+                    {
+                      "name": "identificationType",
+                      "type": "string",
+                      "doc": "Type of Identifier e.g., Passport / Driving License etc"
+                    },
+                    {
+                      "name": "occurrenceNumber",
+                      "type": "int",
+                      "doc": "A party can have multiple identifiers for the same identificationType and so this should also be considered as part of composite business key"
+                    },
+                    {
+                      "name": "startDate",
+                      "type": "string",
+                      "doc": "This should also be considered as part of composite business key for this object"
+                    },
+                    {
+                      "name": "identificationNumber",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "issueLocation",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "expiryDate",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "endDate",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "source",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    }
+                  ]
+                }
+              }
+            ],
+            "default": null
+          },
+          {
+            "name": "privacyPreferences",
+            "type": [
+              "null",
+              {
+                "type": "array",
+                "items": {
+                  "name": "PrivacyPreference",
+                  "type": "record",
+                  "fields": [
+                    {
+                      "name": "performedAction",
+                      "type": "PerformedAction"
+                    },
+                    {
+                      "name": "privacyPreferenceCategory",
+                      "type": "string",
+                      "doc": "Privacy Preference Category. This is part of the business key for this object"
+                    },
+                    {
+                      "name": "privacyPreferenceType",
+                      "type": "string",
+                      "doc": "Privacy Preference Type. This along with the category would be the business key for this object"
+                    },
+                    {
+                      "name": "privacyPreferenceEntity",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "privacyPreferenceReason",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "privacyPreferenceValue",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "startDate",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "endDate",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "source",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    }
+                  ]
+                }
+              }
+            ],
+            "default": null
+          },
+          {
+            "name": "addresses",
+            "type": [
+              "null",
+              {
+                "type": "array",
+                "items": {
+                  "name": "Address",
+                  "type": "record",
+                  "fields": [
+                    {
+                      "name": "performedAction",
+                      "type": "PerformedAction"
+                    },
+                    {
+                      "name": "addressUsage",
+                      "type": "string",
+                      "doc": "Business key for this object"
+                    },
+                    {
+                      "name": "addressLineOne",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "addressLineTwo",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "addressLineThree",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "addressLineFour",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "addressLineFive",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "addressLineSix",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "city",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "zip",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "state",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "country",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "deliveryId",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "startDate",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "endDate",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "source",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    }
+                  ]
+                }
+              }
+            ],
+            "default": null
+          },
+          {
+            "name": "partyEquivalents",
+            "type": [
+              "null",
+              {
+                "type": "array",
+                "items": {
+                  "name": "PartyEquivalent",
+                  "type": "record",
+                  "fields": [
+                    {
+                      "name": "performedAction",
+                      "type": "PerformedAction"
+                    },
+                    {
+                      "name": "system",
+                      "type": "string"
+                    },
+                    {
+                      "name": "systemId",
+                      "type": "string"
+                    }
+                  ]
+                }
+              }
+            ],
+            "default": null
+          },
+          {
+            "name": "contactDetails",
+            "type": [
+              "null",
+              {
+                "type": "array",
+                "items": {
+                  "name": "ContactDetail",
+                  "type": "record",
+                  "fields": [
+                    {
+                      "name": "performedAction",
+                      "type": "PerformedAction"
+                    },
+                    {
+                      "name": "contactMethod",
+                      "type": "string",
+                      "doc": "Business key for this object. Should be used in conjunction with occurrenceNumber"
+                    },
+                    {
+                      "name": "occurrenceNumber",
+                      "type": "int",
+                      "doc": "Part of the composite business key for this object"
+                    },
+                    {
+                      "name": "contactCategory",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null,
+                      "doc": "Primary Category: Example: Telephone / Email"
+                    },
+                    {
+                      "name": "contactReference",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null,
+                      "doc": "The actual mobile / phone number or email id"
+                    },
+                    {
+                      "name": "startDate",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "endDate",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "source",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    }
+                  ]
+                }
+              }
+            ],
+            "default": null
+          },
+          {
+            "name": "accounts",
+            "type": [
+              "null",
+              {
+                "type": "array",
+                "items": {
+                  "name": "Account",
+                  "type": "record",
+                  "fields": [
+                    {
+                      "name": "performedAction",
+                      "type": "PerformedAction"
+                    },
+                    {
+                      "name": "accountNumber",
+                      "type": "string",
+                      "doc": "Account number"
+                    },
+                    {
+                      "name": "productType",
+                      "type": "string"
+                    },
+                    {
+                      "name": "source",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "lastUpdatedDate",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "lastUpdatedBy",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "relationshipTypes",
+                      "doc": "Relationship between party and account e.g., Sole Owner, Joint Owner, etc. A party can have one or more relationships with a given account e.g., Guarantor and Power of Attorney",
+                      "type": [
+                        "null",
+                        {
+                          "type": "array",
+                          "items": {
+                            "name": "PartyAccountRelationship",
+                            "type": "record",
+                            "fields": [
+                              {
+                                "name": "performedAction",
+                                "type": "PerformedAction"
+                              },
+                              {
+                                "name": "relationshipType",
+                                "type": "string",
+                                "doc": "This would be the business key for uniquely identifying a Party-Account relation"
+                              },
+                              {
+                                "name": "startDate",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null,
+                                "doc": "Relationship start date"
+                              },
+                              {
+                                "name": "endDate",
+                                "type": [
+                                  "null",
+                                  "string"
+                                ],
+                                "default": null,
+                                "doc": "Relationship end date"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "accountKey",
+                      "type": "string",
+                      "doc": "Account key. System-wide uniqueness is not guaranteed, so this along with source make up the business key for this object"
+                    },
+                    {
+                      "name": "companyID",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "branchID",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "accountStatus",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    },
+                    {
+                      "name": "subProductCode",
+                      "type": [
+                        "null",
+                        "string"
+                      ],
+                      "default": null
+                    }
+                  ]
+                }
+              }
+            ],
+            "default": null
+          }
+        ]
+      }
+    }
+  ]
+}
