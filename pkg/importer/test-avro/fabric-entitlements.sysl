@@ -17,7 +17,7 @@ Fabric-entitlements-avro-def "Fabric entitlements avro definitions" [package="co
     !type OCVEvent:
         header <: Header:
             @json_tag = "header"
-        OcvTags <: sequence of string:
+        ocvTags <: sequence of string:
             @json_tag = "OcvTags"
             @description = "An array of strings that provide further context to the content of this specific message. For example, if the party is ANZx customer, events for that party would have an 'ANZx' tag"
         eventData <: EventData:
