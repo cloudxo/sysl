@@ -17,62 +17,62 @@ Fabric-entitlements-avro-def "Fabric entitlements avro definitions" [package="co
     !type OCVEvent:
         header <: Header
         ocvTags <: sequence of string:
-            @description = "An array of strings that provide further context to the content of this specific message. For example, if the party is ANZx customer, events for that party would have an 'ANZx' tag"
+            @fieldDescription = "An array of strings that provide further context to the content of this specific message. For example, if the party is ANZx customer, events for that party would have an 'ANZx' tag"
         eventData <: EventData
 
     !type Header:
         eventUUID <: string:
-            @description = "A unique identifier for this particular event.  The event producer allocates the eventId. Has to be in UUID v4 format (i.e. 535c3d5d-fc48-4f08-b85c-1a986e9d1234). OCV Event consumers should not use this though, instead they could use correlationId attribute for uniquely identifying an event"
+            @fieldDescription = "A unique identifier for this particular event.  The event producer allocates the eventId. Has to be in UUID v4 format (i.e. 535c3d5d-fc48-4f08-b85c-1a986e9d1234). OCV Event consumers should not use this though, instead they could use correlationId attribute for uniquely identifying an event"
         ocvID <: string:
-            @description = "A unique OCV identifier for a party. A party can have multiple records in OCV. This and 'subject' would uniquely identify a Party Record within OCV"
+            @fieldDescription = "A unique OCV identifier for a party. A party can have multiple records in OCV. This and 'subject' would uniquely identify a Party Record within OCV"
         subject  <: Subject:
-            @description = "The externalPartyIdentifier is an identifier which is NOT a Party Id, but can be used to correlate the Party to a Party Id. For example, a CRN could be used to correlate the customer, or a UUID, or a CAP CIS Id"
+            @fieldDescription = "The externalPartyIdentifier is an identifier which is NOT a Party Id, but can be used to correlate the Party to a Party Id. For example, a CRN could be used to correlate the customer, or a UUID, or a CAP CIS Id"
         source <: string:
-            @description = "The service identifier that produced the event"
+            @fieldDescription = "The service identifier that produced the event"
         occurrenceDateTime <: datetime:
-            @description = "The date and time, to millisecond precision, that this event occurred"     
+            @fieldDescription = "The date and time, to millisecond precision, that this event occurred"     
         traceId <: string
         spanId <: string
         parentSpanId <: string
         correlationId <: int64:
-            @description = "This would be the Global Sequence Id, unique to each event generated out of MDM"
+            @fieldDescription = "This would be the Global Sequence Id, unique to each event generated out of MDM"
         hierarchy <: string:
-            @description = "Business Event Type Hierarchy, i.e. AU/RETAIL/CARDS"
+            @fieldDescription = "Business Event Type Hierarchy, i.e. AU/RETAIL/CARDS"
         ignore <: bool:
-            @description = "Event should be ignored by the consumers"
+            @fieldDescription = "Event should be ignored by the consumers"
         eventType <: string:
-            @description = "Event Data would be specific for a eventType so this field would help identify what to expect in Event Data"
+            @fieldDescription = "Event Data would be specific for a eventType so this field would help identify what to expect in Event Data"
         expiryDateTime <: datetime:
-            @description = "The event should be ignored by consumers after the specified expire date and time"
+            @fieldDescription = "The event should be ignored by consumers after the specified expire date and time"
         survivorParty <: SurvivorParty
 
     !type Subject:
-        @description = "A party can have multiple records in OCV. This and 'ocvID' would uniquely identify a Party Record within OCV"
+        @recordDescription = "A party can have multiple records in OCV. This and 'ocvID' would uniquely identify a Party Record within OCV"
         subjectType <: string:
-            @description = "The type of identifier, such as CRN, or OCV Id, or CAPCISId"
+            @fieldDescription = "The type of identifier, such as CRN, or OCV Id, or CAPCISId"
         subjectId <: string:
-            @description = "The actual value of the identifier - that would be the actual CRN, for example"
+            @fieldDescription = "The actual value of the identifier - that would be the actual CRN, for example"
 
     !type SurvivorParty:
-        @description = "Survivor Party Details for the Victim party"
+        @recordDescription = "Survivor Party Details for the Victim party"
         ocvID <: string:
-            @description = "A unique OCV identifier for the surviving party"
+            @fieldDescription = "A unique OCV identifier for the surviving party"
         subject <: Subject
 
     !type EventData:
         performedAction <: PerformedAction
         lastUpdatedDate <: string:
-            @description = "The date and time, to millisecond precision, the record was updated last"
+            @fieldDescription = "The date and time, to millisecond precision, the record was updated last"
         lastUpdatedBy <: string:
-            @description = "The person / account who last updated the record"
+            @fieldDescription = "The person / account who last updated the record"
         version <: int:
-            @description = "Party level sequence Id. This can help identify missed events, if any"
+            @fieldDescription = "Party level sequence Id. This can help identify missed events, if any"
         createdDate <: string:
-            @description = "The date and time, to millisecond precision, the record was first created"
+            @fieldDescription = "The date and time, to millisecond precision, the record was first created"
         sinceDate <: string
         leftDate <: string
         partyStatus <: string:
-            @description = "Indicator whether a Party is Active / Inactive / Deceased / etc"
+            @fieldDescription = "Indicator whether a Party is Active / Inactive / Deceased / etc"
         partyType <: Organisation
         identifiers <: sequence of Identifier
         privacyPreferences <: sequence of PrivacyPreference
@@ -83,9 +83,9 @@ Fabric-entitlements-avro-def "Fabric entitlements avro definitions" [package="co
 
     !type Organisation:
         organisationType <: string:
-            @description = "Type of Organisation"
+            @fieldDescription = "Type of Organisation"
         industry <: string:
-            @description = "Type of Industry the Organisation is in"
+            @fieldDescription = "Type of Industry the Organisation is in"
         establishedDate <: string
         kycVerificationLevel <: string
         kycStatus <: string
@@ -95,7 +95,7 @@ Fabric-entitlements-avro-def "Fabric entitlements avro definitions" [package="co
     !type OrganisationName:
         performedAction <: PerformedAction
         nameUsageType <: string:
-            @description = "This would be the business key for uniquely identifying Organisation Name business object"
+            @fieldDescription = "This would be the business key for uniquely identifying Organisation Name business object"
         orgName <: string
         startDate <: string
         endDate <: string
@@ -104,11 +104,11 @@ Fabric-entitlements-avro-def "Fabric entitlements avro definitions" [package="co
     !type Identifier:
         performedAction <: PerformedAction
         identificationType <: string:
-            @description = "Type of Identifier e.g., Passport / Driving License etc"
+            @fieldDescription = "Type of Identifier e.g., Passport / Driving License etc"
         occurrenceNumber <: int:
-            @description = "A party can have multiple identifiers for the same identificationType and so this should also be considered as part of composite business key"
+            @fieldDescription = "A party can have multiple identifiers for the same identificationType and so this should also be considered as part of composite business key"
         startDate <: string:
-            @description = "This should also be considered as part of composite business key for this object"
+            @fieldDescription = "This should also be considered as part of composite business key for this object"
         identificationNumber <: string
         issueLocation <: string
         expiryDate <: string
@@ -118,9 +118,9 @@ Fabric-entitlements-avro-def "Fabric entitlements avro definitions" [package="co
     !type PrivacyPreference:
         performedAction <: PerformedAction
         privacyPreferenceCategory <: string:
-            @description = "Privacy Preference Category. This is part of the business key for this object"
+            @fieldDescription = "Privacy Preference Category. This is part of the business key for this object"
         privacyPreferenceType <: string:
-            @description = "Privacy Preference Type. This along with the category would be the business key for this object"
+            @fieldDescription = "Privacy Preference Type. This along with the category would be the business key for this object"
         privacyPreferenceEntity <: string
         privacyPreferenceReason <: string
         privacyPreferenceValue <: string
@@ -131,7 +131,7 @@ Fabric-entitlements-avro-def "Fabric entitlements avro definitions" [package="co
     !type Address:
         performedAction <: PerformedAction
         addressUsage <: string:
-            @description = "Business key for this object"
+            @fieldDescription = "Business key for this object"
         addressLineOne <: string
         addressLineTwo <: string
         addressLineThree <: string
@@ -155,13 +155,13 @@ Fabric-entitlements-avro-def "Fabric entitlements avro definitions" [package="co
     !type ContactDetail:
         performedAction <: PerformedAction
         contactMethod <: string:
-            @description = "Business key for this object. Should be used in conjunction with occurrenceNumber"
+            @fieldDescription = "Business key for this object. Should be used in conjunction with occurrenceNumber"
         occurrenceNumber <: int:
-            @description = "Part of the composite business key for this object"
+            @fieldDescription = "Part of the composite business key for this object"
         contactCategory <: string:
-            @description = "Primary Category: Example: Telephone / Email"
+            @fieldDescription = "Primary Category: Example: Telephone / Email"
         contactReference <: string:
-            @description = "The actual mobile / phone number or email id"
+            @fieldDescription = "The actual mobile / phone number or email id"
         startDate <: string
         endDate <: string
         source <: string
@@ -174,9 +174,9 @@ Fabric-entitlements-avro-def "Fabric entitlements avro definitions" [package="co
         lastUpdatedDate <: string
         lastUpdatedBy <: string
         relationshipTypes <: sequence of PartyAccountRelationship:
-            @description = "Relationship between party and account e.g., Sole Owner, Joint Owner, etc. A party can have one or more relationships with a given account e.g., Guarantor and Power of Attorney"
+            @fieldDescription = "Relationship between party and account e.g., Sole Owner, Joint Owner, etc. A party can have one or more relationships with a given account e.g., Guarantor and Power of Attorney"
         accountKey <: string:
-            @description = "Account key. System-wide uniqueness is not guaranteed, so this along with source make up the business key for this object"
+            @fieldDescription = "Account key. System-wide uniqueness is not guaranteed, so this along with source make up the business key for this object"
         companyID <: string
         branchID <: string
         accountStatus <: string
@@ -185,11 +185,11 @@ Fabric-entitlements-avro-def "Fabric entitlements avro definitions" [package="co
     !type PartyAccountRelationship:
         performedAction <: PerformedAction
         relationshipType <: string:
-            @description = "This would be the business key for uniquely identifying a Party-Account relation"
+            @fieldDescription = "This would be the business key for uniquely identifying a Party-Account relation"
         startDate <: string:
-            @description = "Relationship start date"
+            @fieldDescription = "Relationship start date"
         endDate <: string:
-            @description = "Relationship end date"
+            @fieldDescription = "Relationship end date"
 
     !enum PerformedAction:
         add: 1
