@@ -1,0 +1,23 @@
+@startuml
+skinparam component {
+  BackgroundColor FloralWhite
+  BorderColor Black
+  ArrowColor Crimson
+}
+hide methods
+
+entity Bar {
+  *a : STRING
+  --
+  b : INT
+  *x : Foo.x
+}
+
+entity Foo {
+  *x : INT
+  *y : INT
+}
+
+Bar             }o--|| Foo
+
+@enduml

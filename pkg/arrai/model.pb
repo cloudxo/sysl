@@ -1,21 +1,61 @@
-Â
-Source·
+î
+Sourceã
 
-Source"
+Source"+
+description"A database.
+ Stores data.
+"
 patterns:
-"db*0
-Read(
-Read:B
-xš
+"db*8
+Read0
+Read:B
+	ok <: Fooš
 
-model.sysl2H
-FooAš
+model.sysl2ñ
+FooéB0
+description!"A Foo.
+ Represents foo things.
+š
 
-model.sysl$
-"
-xš
+model.sysl:™
+A
+x<B
+description"The x value.š
 
-model.syslš
+model.sysl
+
+T
+yOB0
+description!"A Foo.
+ Represents foo things.
+š
+
+model.sysl2Ê
+BarÂB
+description"A bar table.š
+
+model.sysl:…
+W
+aRB
+patterns:
+"pkB
+description"A bar table.š
+
+model.sysl
+F
+bAB 
+description"An optional int`š
+
+model.sysl
+]
+xXB
+description"A foreign keyš
+
+model.syslJ
+
+
+SourceBarFoox
+aš
 
 model.sysl
 d
@@ -27,9 +67,9 @@ model.sysl
 
 SourceReadš
 
-model.sysl	š
+model.syslš
 
-model.sysld
+model.sysld
 B_
 
 B*?
@@ -38,9 +78,9 @@ model.sysld
 
 SourceReadš
 
-model.syslš
+model.sysl š
 
-model.syslñ
+model.syslñ
 Cë
 
 C*=
@@ -49,13 +89,13 @@ model.syslñ
 
 AFetchš
 
-model.sysl*=
+model.sysl!$*=
 FetchB3
 FetchB:
 
 BFetchš
 
-model.sysl*M
+model.sysl$'*M
 FetchD
 Fetch:
 
@@ -63,9 +103,9 @@ model.sysl*M
 
 CFetchBš
 
-model.syslš
+model.sysl'+š
 
-model.syslp
+model.sysl  p
 Dk
 
 D*K
@@ -76,9 +116,9 @@ model.syslp
 
 CFetchš
 
-model.sysl š
+model.sysl,0š
 
-model.syslb
+model.sysl++b
 ClientX
 
 Client*3
@@ -87,6 +127,6 @@ model.syslb
 
 DFetchš
 
-model.sysl!#š
+model.sysl13š
 
-model.sysl  
+model.sysl00
