@@ -1,0 +1,2538 @@
+{
+ "apps":  {
+  "Fabric-entitlements-avro-def":  {
+   "name":  {
+    "part":  [
+     "Fabric-entitlements-avro-def"
+    ]
+   },
+   "longName":  "Fabric entitlements avro definitions",
+   "attrs":  {
+    "description":  {
+     "s":  "Fabric entitlements avro definitions.\n"
+    },
+    "package":  {
+     "s":  "com.anz.ocv.pe"
+    }
+   },
+   "types":  {
+    "Account":  {
+     "tuple":  {
+      "attrDefs":  {
+       "accountKey":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "Account key. System-wide uniqueness is not guaranteed, so this along with source make up the business key for this object"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  175,
+          "col":  22
+         },
+         "end":  {
+          "line":  176,
+          "col":  8
+         }
+        }
+       },
+       "accountNumber":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  167,
+          "col":  25
+         },
+         "end":  {
+          "line":  167,
+          "col":  25
+         }
+        }
+       },
+       "accountStatus":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  178,
+          "col":  25
+         },
+         "end":  {
+          "line":  178,
+          "col":  25
+         }
+        }
+       },
+       "branchID":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  177,
+          "col":  20
+         },
+         "end":  {
+          "line":  177,
+          "col":  20
+         }
+        }
+       },
+       "companyID":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  176,
+          "col":  21
+         },
+         "end":  {
+          "line":  176,
+          "col":  21
+         }
+        }
+       },
+       "lastUpdatedBy":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  171,
+          "col":  25
+         },
+         "end":  {
+          "line":  171,
+          "col":  25
+         }
+        }
+       },
+       "lastUpdatedDate":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  170,
+          "col":  27
+         },
+         "end":  {
+          "line":  170,
+          "col":  27
+         }
+        }
+       },
+       "performedAction":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Account"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "PerformedAction"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  166,
+          "col":  27
+         },
+         "end":  {
+          "line":  166,
+          "col":  27
+         }
+        }
+       },
+       "productType":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  168,
+          "col":  23
+         },
+         "end":  {
+          "line":  168,
+          "col":  23
+         }
+        }
+       },
+       "relationshipTypes":  {
+        "sequence":  {
+         "typeRef":  {
+          "context":  {
+           "appname":  {
+            "part":  [
+             "Fabric-entitlements-avro-def"
+            ]
+           },
+           "path":  [
+            "Account"
+           ]
+          },
+          "ref":  {
+           "path":  [
+            "PartyAccountRelationship"
+           ]
+          }
+         },
+         "sourceContext":  {
+          "file":  "fabric-entitlements.sysl",
+          "start":  {
+           "line":  173,
+           "col":  29
+          },
+          "end":  {
+           "line":  174,
+           "col":  8
+          }
+         }
+        },
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "Relationship between party and account e.g., Sole Owner, Joint Owner, etc. A party can have one or more relationships with a given account e.g., Guarantor and Power of Attorney"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  173,
+          "col":  29
+         },
+         "end":  {
+          "line":  174,
+          "col":  8
+         }
+        }
+       },
+       "source":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  169,
+          "col":  18
+         },
+         "end":  {
+          "line":  169,
+          "col":  18
+         }
+        }
+       },
+       "subProductCode":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  179,
+          "col":  26
+         },
+         "end":  {
+          "line":  179,
+          "col":  26
+         }
+        }
+       }
+      }
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  165,
+       "col":  4
+      },
+      "end":  {
+       "line":  181,
+       "col":  4
+      }
+     }
+    },
+    "Address":  {
+     "tuple":  {
+      "attrDefs":  {
+       "addressLineFive":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  135,
+          "col":  27
+         },
+         "end":  {
+          "line":  135,
+          "col":  27
+         }
+        }
+       },
+       "addressLineFour":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  134,
+          "col":  27
+         },
+         "end":  {
+          "line":  134,
+          "col":  27
+         }
+        }
+       },
+       "addressLineOne":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  131,
+          "col":  26
+         },
+         "end":  {
+          "line":  131,
+          "col":  26
+         }
+        }
+       },
+       "addressLineSix":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  136,
+          "col":  26
+         },
+         "end":  {
+          "line":  136,
+          "col":  26
+         }
+        }
+       },
+       "addressLineThree":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  133,
+          "col":  28
+         },
+         "end":  {
+          "line":  133,
+          "col":  28
+         }
+        }
+       },
+       "addressLineTwo":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  132,
+          "col":  26
+         },
+         "end":  {
+          "line":  132,
+          "col":  26
+         }
+        }
+       },
+       "addressUsage":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "Business key for this object"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  130,
+          "col":  24
+         },
+         "end":  {
+          "line":  131,
+          "col":  8
+         }
+        }
+       },
+       "city":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  137,
+          "col":  16
+         },
+         "end":  {
+          "line":  137,
+          "col":  16
+         }
+        }
+       },
+       "country":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  140,
+          "col":  19
+         },
+         "end":  {
+          "line":  140,
+          "col":  19
+         }
+        }
+       },
+       "deliveryId":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  141,
+          "col":  22
+         },
+         "end":  {
+          "line":  141,
+          "col":  22
+         }
+        }
+       },
+       "endDate":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  143,
+          "col":  19
+         },
+         "end":  {
+          "line":  143,
+          "col":  19
+         }
+        }
+       },
+       "performedAction":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Address"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "PerformedAction"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  128,
+          "col":  27
+         },
+         "end":  {
+          "line":  128,
+          "col":  27
+         }
+        }
+       },
+       "source":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  144,
+          "col":  18
+         },
+         "end":  {
+          "line":  144,
+          "col":  18
+         }
+        }
+       },
+       "startDate":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  142,
+          "col":  21
+         },
+         "end":  {
+          "line":  142,
+          "col":  21
+         }
+        }
+       },
+       "state":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  139,
+          "col":  17
+         },
+         "end":  {
+          "line":  139,
+          "col":  17
+         }
+        }
+       },
+       "zip":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  138,
+          "col":  15
+         },
+         "end":  {
+          "line":  138,
+          "col":  15
+         }
+        }
+       }
+      }
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  127,
+       "col":  4
+      },
+      "end":  {
+       "line":  146,
+       "col":  4
+      }
+     }
+    },
+    "ContactDetail":  {
+     "tuple":  {
+      "attrDefs":  {
+       "contactCategory":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "Primary Category: Example: Telephone / Email"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  158,
+          "col":  27
+         },
+         "end":  {
+          "line":  159,
+          "col":  8
+         }
+        }
+       },
+       "contactMethod":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "Business key for this object. Should be used in conjunction with occurrenceNumber"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  154,
+          "col":  25
+         },
+         "end":  {
+          "line":  155,
+          "col":  8
+         }
+        }
+       },
+       "contactReference":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "The actual mobile / phone number or email id"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  160,
+          "col":  28
+         },
+         "end":  {
+          "line":  161,
+          "col":  8
+         }
+        }
+       },
+       "endDate":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  162,
+          "col":  19
+         },
+         "end":  {
+          "line":  162,
+          "col":  19
+         }
+        }
+       },
+       "occurrenceNumber":  {
+        "primitive":  "INT",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "Part of the composite business key for this object"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  156,
+          "col":  28
+         },
+         "end":  {
+          "line":  157,
+          "col":  8
+         }
+        }
+       },
+       "performedAction":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "ContactDetail"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "PerformedAction"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  152,
+          "col":  27
+         },
+         "end":  {
+          "line":  152,
+          "col":  27
+         }
+        }
+       },
+       "source":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  163,
+          "col":  18
+         },
+         "end":  {
+          "line":  163,
+          "col":  18
+         }
+        }
+       },
+       "startDate":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  161,
+          "col":  21
+         },
+         "end":  {
+          "line":  161,
+          "col":  21
+         }
+        }
+       }
+      }
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  151,
+       "col":  4
+      },
+      "end":  {
+       "line":  165,
+       "col":  4
+      }
+     }
+    },
+    "EventData":  {
+     "tuple":  {
+      "attrDefs":  {
+       "accounts":  {
+        "sequence":  {
+         "typeRef":  {
+          "context":  {
+           "appname":  {
+            "part":  [
+             "Fabric-entitlements-avro-def"
+            ]
+           },
+           "path":  [
+            "EventData"
+           ]
+          },
+          "ref":  {
+           "path":  [
+            "Account"
+           ]
+          }
+         },
+         "sourceContext":  {
+          "file":  "fabric-entitlements.sysl",
+          "start":  {
+           "line":  78,
+           "col":  20
+          },
+          "end":  {
+           "line":  78,
+           "col":  32
+          }
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  78,
+          "col":  20
+         },
+         "end":  {
+          "line":  78,
+          "col":  32
+         }
+        }
+       },
+       "addresses":  {
+        "sequence":  {
+         "typeRef":  {
+          "context":  {
+           "appname":  {
+            "part":  [
+             "Fabric-entitlements-avro-def"
+            ]
+           },
+           "path":  [
+            "EventData"
+           ]
+          },
+          "ref":  {
+           "path":  [
+            "Address"
+           ]
+          }
+         },
+         "sourceContext":  {
+          "file":  "fabric-entitlements.sysl",
+          "start":  {
+           "line":  75,
+           "col":  21
+          },
+          "end":  {
+           "line":  75,
+           "col":  33
+          }
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  75,
+          "col":  21
+         },
+         "end":  {
+          "line":  75,
+          "col":  33
+         }
+        }
+       },
+       "contactDetails":  {
+        "sequence":  {
+         "typeRef":  {
+          "context":  {
+           "appname":  {
+            "part":  [
+             "Fabric-entitlements-avro-def"
+            ]
+           },
+           "path":  [
+            "EventData"
+           ]
+          },
+          "ref":  {
+           "path":  [
+            "ContactDetail"
+           ]
+          }
+         },
+         "sourceContext":  {
+          "file":  "fabric-entitlements.sysl",
+          "start":  {
+           "line":  77,
+           "col":  26
+          },
+          "end":  {
+           "line":  77,
+           "col":  38
+          }
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  77,
+          "col":  26
+         },
+         "end":  {
+          "line":  77,
+          "col":  38
+         }
+        }
+       },
+       "createdDate":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "The date and time, to millisecond precision, the record was first created"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  67,
+          "col":  23
+         },
+         "end":  {
+          "line":  68,
+          "col":  8
+         }
+        }
+       },
+       "identifiers":  {
+        "sequence":  {
+         "typeRef":  {
+          "context":  {
+           "appname":  {
+            "part":  [
+             "Fabric-entitlements-avro-def"
+            ]
+           },
+           "path":  [
+            "EventData"
+           ]
+          },
+          "ref":  {
+           "path":  [
+            "Identifier"
+           ]
+          }
+         },
+         "sourceContext":  {
+          "file":  "fabric-entitlements.sysl",
+          "start":  {
+           "line":  73,
+           "col":  23
+          },
+          "end":  {
+           "line":  73,
+           "col":  35
+          }
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  73,
+          "col":  23
+         },
+         "end":  {
+          "line":  73,
+          "col":  35
+         }
+        }
+       },
+       "lastUpdatedBy":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "The person / account who last updated the record"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  63,
+          "col":  25
+         },
+         "end":  {
+          "line":  64,
+          "col":  8
+         }
+        }
+       },
+       "lastUpdatedDate":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "The date and time, to millisecond precision, the record was updated last"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  61,
+          "col":  27
+         },
+         "end":  {
+          "line":  62,
+          "col":  8
+         }
+        }
+       },
+       "leftDate":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  69,
+          "col":  20
+         },
+         "end":  {
+          "line":  69,
+          "col":  20
+         }
+        }
+       },
+       "partyEquivalents":  {
+        "sequence":  {
+         "typeRef":  {
+          "context":  {
+           "appname":  {
+            "part":  [
+             "Fabric-entitlements-avro-def"
+            ]
+           },
+           "path":  [
+            "EventData"
+           ]
+          },
+          "ref":  {
+           "path":  [
+            "PartyEquivalent"
+           ]
+          }
+         },
+         "sourceContext":  {
+          "file":  "fabric-entitlements.sysl",
+          "start":  {
+           "line":  76,
+           "col":  28
+          },
+          "end":  {
+           "line":  76,
+           "col":  40
+          }
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  76,
+          "col":  28
+         },
+         "end":  {
+          "line":  76,
+          "col":  40
+         }
+        }
+       },
+       "partyStatus":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "Indicator whether a Party is Active / Inactive / Deceased / etc"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  71,
+          "col":  23
+         },
+         "end":  {
+          "line":  72,
+          "col":  8
+         }
+        }
+       },
+       "partyType":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "EventData"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "Organisation"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  72,
+          "col":  21
+         },
+         "end":  {
+          "line":  72,
+          "col":  21
+         }
+        }
+       },
+       "performedAction":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "EventData"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "PerformedAction"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  59,
+          "col":  27
+         },
+         "end":  {
+          "line":  59,
+          "col":  27
+         }
+        }
+       },
+       "privacyPreferences":  {
+        "sequence":  {
+         "typeRef":  {
+          "context":  {
+           "appname":  {
+            "part":  [
+             "Fabric-entitlements-avro-def"
+            ]
+           },
+           "path":  [
+            "EventData"
+           ]
+          },
+          "ref":  {
+           "path":  [
+            "PrivacyPreference"
+           ]
+          }
+         },
+         "sourceContext":  {
+          "file":  "fabric-entitlements.sysl",
+          "start":  {
+           "line":  74,
+           "col":  30
+          },
+          "end":  {
+           "line":  74,
+           "col":  42
+          }
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  74,
+          "col":  30
+         },
+         "end":  {
+          "line":  74,
+          "col":  42
+         }
+        }
+       },
+       "sinceDate":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  68,
+          "col":  21
+         },
+         "end":  {
+          "line":  68,
+          "col":  21
+         }
+        }
+       },
+       "version":  {
+        "primitive":  "INT",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "Party level sequence Id. This can help identify missed events, if any"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  65,
+          "col":  19
+         },
+         "end":  {
+          "line":  66,
+          "col":  8
+         }
+        }
+       }
+      }
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  58,
+       "col":  4
+      },
+      "end":  {
+       "line":  80,
+       "col":  4
+      }
+     }
+    },
+    "Header":  {
+     "tuple":  {
+      "attrDefs":  {
+       "correlationId":  {
+        "primitive":  "INT",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "This would be the Global Sequence Id, unique to each event generated out of MDM"
+         }
+        },
+        "constraint":  [
+         {
+          "range":  {
+           "min":  {
+            "i":  "-9223372036854775808"
+           },
+           "max":  {
+            "i":  "9223372036854775807"
+           }
+          }
+         }
+        ],
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  34,
+          "col":  25
+         },
+         "end":  {
+          "line":  35,
+          "col":  8
+         }
+        }
+       },
+       "eventType":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "Event Data would be specific for a eventType so this field would help identify what to expect in Event Data"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  40,
+          "col":  21
+         },
+         "end":  {
+          "line":  41,
+          "col":  8
+         }
+        }
+       },
+       "eventUUID":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "A unique identifier for this particular event.  The event producer allocates the eventId. Has to be in UUID v4 format (i.e. 535c3d5d-fc48-4f08-b85c-1a986e9d1234). OCV Event consumers should not use this though, instead they could use correlationId attribute for uniquely identifying an event"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  21,
+          "col":  21
+         },
+         "end":  {
+          "line":  22,
+          "col":  8
+         }
+        }
+       },
+       "expiryDateTime":  {
+        "primitive":  "DATETIME",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "The event should be ignored by consumers after the specified expire date and time"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  42,
+          "col":  26
+         },
+         "end":  {
+          "line":  43,
+          "col":  8
+         }
+        }
+       },
+       "hierarchy":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "Business Event Type Hierarchy, i.e. AU/RETAIL/CARDS"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  36,
+          "col":  21
+         },
+         "end":  {
+          "line":  37,
+          "col":  8
+         }
+        }
+       },
+       "ignore":  {
+        "primitive":  "BOOL",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "Event should be ignored by the consumers"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  38,
+          "col":  18
+         },
+         "end":  {
+          "line":  39,
+          "col":  8
+         }
+        }
+       },
+       "occurrenceDateTime":  {
+        "primitive":  "DATETIME",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "The date and time, to millisecond precision, that this event occurred"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  29,
+          "col":  30
+         },
+         "end":  {
+          "line":  30,
+          "col":  8
+         }
+        }
+       },
+       "ocvID":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "A unique OCV identifier for a party. A party can have multiple records in OCV. This and 'subject' would uniquely identify a Party Record within OCV"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  23,
+          "col":  17
+         },
+         "end":  {
+          "line":  24,
+          "col":  8
+         }
+        }
+       },
+       "parentSpanId":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  32,
+          "col":  24
+         },
+         "end":  {
+          "line":  32,
+          "col":  24
+         }
+        }
+       },
+       "source":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "The service identifier that produced the event"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  27,
+          "col":  18
+         },
+         "end":  {
+          "line":  28,
+          "col":  8
+         }
+        }
+       },
+       "spanId":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  31,
+          "col":  18
+         },
+         "end":  {
+          "line":  31,
+          "col":  18
+         }
+        }
+       },
+       "subject":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Header"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "Subject"
+          ]
+         }
+        },
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "The externalPartyIdentifier is an identifier which is NOT a Party Id, but can be used to correlate the Party to a Party Id. For example, a CRN could be used to correlate the customer, or a UUID, or a CAP CIS Id"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  25,
+          "col":  20
+         },
+         "end":  {
+          "line":  26,
+          "col":  8
+         }
+        }
+       },
+       "survivorParty":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Header"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "SurvivorParty"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  43,
+          "col":  25
+         },
+         "end":  {
+          "line":  43,
+          "col":  25
+         }
+        }
+       },
+       "traceId":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  30,
+          "col":  19
+         },
+         "end":  {
+          "line":  30,
+          "col":  19
+         }
+        }
+       }
+      }
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  19,
+       "col":  4
+      },
+      "end":  {
+       "line":  45,
+       "col":  4
+      }
+     }
+    },
+    "Identifier":  {
+     "tuple":  {
+      "attrDefs":  {
+       "endDate":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  111,
+          "col":  19
+         },
+         "end":  {
+          "line":  111,
+          "col":  19
+         }
+        }
+       },
+       "expiryDate":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  110,
+          "col":  22
+         },
+         "end":  {
+          "line":  110,
+          "col":  22
+         }
+        }
+       },
+       "identificationNumber":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  108,
+          "col":  32
+         },
+         "end":  {
+          "line":  108,
+          "col":  32
+         }
+        }
+       },
+       "identificationType":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "Type of Identifier e.g., Passport / Driving License etc"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  103,
+          "col":  30
+         },
+         "end":  {
+          "line":  104,
+          "col":  8
+         }
+        }
+       },
+       "issueLocation":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  109,
+          "col":  25
+         },
+         "end":  {
+          "line":  109,
+          "col":  25
+         }
+        }
+       },
+       "occurrenceNumber":  {
+        "primitive":  "INT",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "A party can have multiple identifiers for the same identificationType and so this should also be considered as part of composite business key"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  105,
+          "col":  28
+         },
+         "end":  {
+          "line":  106,
+          "col":  8
+         }
+        }
+       },
+       "performedAction":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Identifier"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "PerformedAction"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  101,
+          "col":  27
+         },
+         "end":  {
+          "line":  101,
+          "col":  27
+         }
+        }
+       },
+       "source":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  112,
+          "col":  18
+         },
+         "end":  {
+          "line":  112,
+          "col":  18
+         }
+        }
+       },
+       "startDate":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "This should also be considered as part of composite business key for this object"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  107,
+          "col":  21
+         },
+         "end":  {
+          "line":  108,
+          "col":  8
+         }
+        }
+       }
+      }
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  100,
+       "col":  4
+      },
+      "end":  {
+       "line":  114,
+       "col":  4
+      }
+     }
+    },
+    "OCVEvent":  {
+     "tuple":  {
+      "attrDefs":  {
+       "eventData":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "OCVEvent"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "EventData"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  17,
+          "col":  21
+         },
+         "end":  {
+          "line":  17,
+          "col":  21
+         }
+        }
+       },
+       "header":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "OCVEvent"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "Header"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  14,
+          "col":  18
+         },
+         "end":  {
+          "line":  14,
+          "col":  18
+         }
+        }
+       },
+       "ocvTags":  {
+        "sequence":  {
+         "primitive":  "STRING",
+         "sourceContext":  {
+          "file":  "fabric-entitlements.sysl",
+          "start":  {
+           "line":  16,
+           "col":  19
+          },
+          "end":  {
+           "line":  17,
+           "col":  8
+          }
+         }
+        },
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "An array of strings that provide further context to the content of this specific message. For example, if the party is ANZx customer, events for that party would have an 'ANZx' tag"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  16,
+          "col":  19
+         },
+         "end":  {
+          "line":  17,
+          "col":  8
+         }
+        }
+       }
+      }
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  13,
+       "col":  4
+      },
+      "end":  {
+       "line":  19,
+       "col":  4
+      }
+     }
+    },
+    "Organisation":  {
+     "tuple":  {
+      "attrDefs":  {
+       "bankruptDate":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  88,
+          "col":  24
+         },
+         "end":  {
+          "line":  88,
+          "col":  24
+         }
+        }
+       },
+       "establishedDate":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  85,
+          "col":  27
+         },
+         "end":  {
+          "line":  85,
+          "col":  27
+         }
+        }
+       },
+       "industry":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "Type of Industry the Organisation is in"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  84,
+          "col":  20
+         },
+         "end":  {
+          "line":  85,
+          "col":  8
+         }
+        }
+       },
+       "kycStatus":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  87,
+          "col":  21
+         },
+         "end":  {
+          "line":  87,
+          "col":  21
+         }
+        }
+       },
+       "kycVerificationLevel":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  86,
+          "col":  32
+         },
+         "end":  {
+          "line":  86,
+          "col":  32
+         }
+        }
+       },
+       "organisationNames":  {
+        "sequence":  {
+         "typeRef":  {
+          "context":  {
+           "appname":  {
+            "part":  [
+             "Fabric-entitlements-avro-def"
+            ]
+           },
+           "path":  [
+            "Organisation"
+           ]
+          },
+          "ref":  {
+           "path":  [
+            "OrganisationName"
+           ]
+          }
+         },
+         "sourceContext":  {
+          "file":  "fabric-entitlements.sysl",
+          "start":  {
+           "line":  89,
+           "col":  29
+          },
+          "end":  {
+           "line":  89,
+           "col":  41
+          }
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  89,
+          "col":  29
+         },
+         "end":  {
+          "line":  89,
+          "col":  41
+         }
+        }
+       },
+       "organisationType":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "Type of Organisation"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  82,
+          "col":  28
+         },
+         "end":  {
+          "line":  83,
+          "col":  8
+         }
+        }
+       }
+      }
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  80,
+       "col":  4
+      },
+      "end":  {
+       "line":  91,
+       "col":  4
+      }
+     }
+    },
+    "OrganisationName":  {
+     "tuple":  {
+      "attrDefs":  {
+       "endDate":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  97,
+          "col":  19
+         },
+         "end":  {
+          "line":  97,
+          "col":  19
+         }
+        }
+       },
+       "nameUsageType":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "This would be the business key for uniquely identifying Organisation Name business object"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  94,
+          "col":  25
+         },
+         "end":  {
+          "line":  95,
+          "col":  8
+         }
+        }
+       },
+       "orgName":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  95,
+          "col":  19
+         },
+         "end":  {
+          "line":  95,
+          "col":  19
+         }
+        }
+       },
+       "performedAction":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "OrganisationName"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "PerformedAction"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  92,
+          "col":  27
+         },
+         "end":  {
+          "line":  92,
+          "col":  27
+         }
+        }
+       },
+       "source":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  98,
+          "col":  18
+         },
+         "end":  {
+          "line":  98,
+          "col":  18
+         }
+        }
+       },
+       "startDate":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  96,
+          "col":  21
+         },
+         "end":  {
+          "line":  96,
+          "col":  21
+         }
+        }
+       }
+      }
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  91,
+       "col":  4
+      },
+      "end":  {
+       "line":  100,
+       "col":  4
+      }
+     }
+    },
+    "PartyAccountRelationship":  {
+     "tuple":  {
+      "attrDefs":  {
+       "endDate":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "Relationship end date"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  188,
+          "col":  19
+         },
+         "end":  {
+          "line":  190,
+          "col":  4
+         }
+        }
+       },
+       "performedAction":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "PartyAccountRelationship"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "PerformedAction"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  182,
+          "col":  27
+         },
+         "end":  {
+          "line":  182,
+          "col":  27
+         }
+        }
+       },
+       "relationshipType":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "This would be the business key for uniquely identifying a Party-Account relation"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  184,
+          "col":  28
+         },
+         "end":  {
+          "line":  185,
+          "col":  8
+         }
+        }
+       },
+       "startDate":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "Relationship start date"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  186,
+          "col":  21
+         },
+         "end":  {
+          "line":  187,
+          "col":  8
+         }
+        }
+       }
+      }
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  181,
+       "col":  4
+      },
+      "end":  {
+       "line":  190,
+       "col":  4
+      }
+     }
+    },
+    "PartyEquivalent":  {
+     "tuple":  {
+      "attrDefs":  {
+       "performedAction":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "PartyEquivalent"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "PerformedAction"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  147,
+          "col":  27
+         },
+         "end":  {
+          "line":  147,
+          "col":  27
+         }
+        }
+       },
+       "system":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  148,
+          "col":  18
+         },
+         "end":  {
+          "line":  148,
+          "col":  18
+         }
+        }
+       },
+       "systemId":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  149,
+          "col":  20
+         },
+         "end":  {
+          "line":  149,
+          "col":  20
+         }
+        }
+       }
+      }
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  146,
+       "col":  4
+      },
+      "end":  {
+       "line":  151,
+       "col":  4
+      }
+     }
+    },
+    "PerformedAction":  {
+     "enum":  {
+      "items":  {
+       "add":  "1",
+       "delete":  "3",
+       "none":  "4",
+       "update":  "2"
+      }
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  190,
+       "col":  4
+      },
+      "end":  {
+       "line":  194,
+       "col":  15
+      }
+     }
+    },
+    "PrivacyPreference":  {
+     "tuple":  {
+      "attrDefs":  {
+       "endDate":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  124,
+          "col":  19
+         },
+         "end":  {
+          "line":  124,
+          "col":  19
+         }
+        }
+       },
+       "performedAction":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "PrivacyPreference"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "PerformedAction"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  115,
+          "col":  27
+         },
+         "end":  {
+          "line":  115,
+          "col":  27
+         }
+        }
+       },
+       "privacyPreferenceCategory":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "Privacy Preference Category. This is part of the business key for this object"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  117,
+          "col":  37
+         },
+         "end":  {
+          "line":  118,
+          "col":  8
+         }
+        }
+       },
+       "privacyPreferenceEntity":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  120,
+          "col":  35
+         },
+         "end":  {
+          "line":  120,
+          "col":  35
+         }
+        }
+       },
+       "privacyPreferenceReason":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  121,
+          "col":  35
+         },
+         "end":  {
+          "line":  121,
+          "col":  35
+         }
+        }
+       },
+       "privacyPreferenceType":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "Privacy Preference Type. This along with the category would be the business key for this object"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  119,
+          "col":  33
+         },
+         "end":  {
+          "line":  120,
+          "col":  8
+         }
+        }
+       },
+       "privacyPreferenceValue":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  122,
+          "col":  34
+         },
+         "end":  {
+          "line":  122,
+          "col":  34
+         }
+        }
+       },
+       "source":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  125,
+          "col":  18
+         },
+         "end":  {
+          "line":  125,
+          "col":  18
+         }
+        }
+       },
+       "startDate":  {
+        "primitive":  "STRING",
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  123,
+          "col":  21
+         },
+         "end":  {
+          "line":  123,
+          "col":  21
+         }
+        }
+       }
+      }
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  114,
+       "col":  4
+      },
+      "end":  {
+       "line":  127,
+       "col":  4
+      }
+     }
+    },
+    "Subject":  {
+     "tuple":  {
+      "attrDefs":  {
+       "subjectId":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "The actual value of the identifier - that would be the actual CRN, for example"
+         },
+         "recordDescription":  {
+          "s":  "A party can have multiple records in OCV. This and 'ocvID' would uniquely identify a Party Record within OCV"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  50,
+          "col":  21
+         },
+         "end":  {
+          "line":  52,
+          "col":  4
+         }
+        }
+       },
+       "subjectType":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "The type of identifier, such as CRN, or OCV Id, or CAPCISId"
+         },
+         "recordDescription":  {
+          "s":  "A party can have multiple records in OCV. This and 'ocvID' would uniquely identify a Party Record within OCV"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  48,
+          "col":  23
+         },
+         "end":  {
+          "line":  49,
+          "col":  8
+         }
+        }
+       }
+      }
+     },
+     "attrs":  {
+      "recordDescription":  {
+       "s":  "A party can have multiple records in OCV. This and 'ocvID' would uniquely identify a Party Record within OCV"
+      }
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  46,
+       "col":  4
+      },
+      "end":  {
+       "line":  52,
+       "col":  4
+      }
+     }
+    },
+    "SurvivorParty":  {
+     "tuple":  {
+      "attrDefs":  {
+       "ocvID":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "A unique OCV identifier for the surviving party"
+         },
+         "recordDescription":  {
+          "s":  "Survivor Party Details for the Victim party"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  55,
+          "col":  17
+         },
+         "end":  {
+          "line":  56,
+          "col":  8
+         }
+        }
+       },
+       "subject":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "SurvivorParty"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "Subject"
+          ]
+         }
+        },
+        "attrs":  {
+         "recordDescription":  {
+          "s":  "Survivor Party Details for the Victim party"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  56,
+          "col":  19
+         },
+         "end":  {
+          "line":  56,
+          "col":  19
+         }
+        }
+       }
+      }
+     },
+     "attrs":  {
+      "recordDescription":  {
+       "s":  "Survivor Party Details for the Victim party"
+      }
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  53,
+       "col":  4
+      },
+      "end":  {
+       "line":  58,
+       "col":  4
+      }
+     }
+    }
+   },
+   "sourceContext":  {
+    "file":  "fabric-entitlements.sysl",
+    "start":  {
+     "line":  7,
+     "col":  1
+    },
+    "end":  {
+     "line":  7,
+     "col":  93
+    }
+   }
+  }
+ }
+}
