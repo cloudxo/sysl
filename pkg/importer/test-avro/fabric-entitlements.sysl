@@ -4,10 +4,6 @@
 ##                                      ##
 ##########################################
 
-Project:
-    avro:
-        Fabric-entitlements-avro-def
-
 Fabric-entitlements-avro-def "Fabric entitlements avro definitions" [package="com.anz.ocv.pe"]:
     @description =:
         | Fabric entitlements avro definitions.

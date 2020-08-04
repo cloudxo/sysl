@@ -1,0 +1,26 @@
+let avroTransform = \schema \appName
+# Load Avro spec whose format is protobuf 
+let fabricEntitle = //encoding.json.decode(//os.file(schema));
+#let rootIsObj = fabricEntitle("type")? true:false;rootIsObj
+
+$'
+{
+  "apps": {
+    "${appName}": {
+      "name": {
+        "part": [
+          "${appName}"
+        ]
+      },
+    "attrs": {
+      "package": {
+        "s": "${fabricEntitle("namespace").s}"
+      }
+    },
+    "types":  {
+    }
+}
+'
+;
+
+avroTransform("../test-avro/fabric-entitlements.avsc", "Test")
