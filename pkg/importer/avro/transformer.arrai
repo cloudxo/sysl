@@ -1,12 +1,14 @@
 let avroTransform = \schema \appName
 # Load Avro spec whose format is protobuf 
-let fabricEntitle = //encoding.json.decode(//os.file(schema));
-#let rootIsObj = fabricEntitle("type")? true:false;rootIsObj
+let schema = //encoding.json.decode(//os.file(schema));
+
+let type = schema("type")?.s:"";
+
 
 $'
 {
   "apps": {
-    "${appName}": {
+    "${appName} ${type}": {
       "name": {
         "part": [
           "${appName}"
@@ -14,13 +16,30 @@ $'
       },
     "attrs": {
       "package": {
-        "s": "${fabricEntitle("namespace").s}"
+        "s": "${schema("namespace").s}"
       }
     },
     "types":  {
     }
 }
 '
+
+
+
 ;
 
 avroTransform("../test-avro/fabric-entitlements.avsc", "Test")
+
+let walkThrough = \type
+cond type {
+    'null': ,
+    'boolean': '',
+    'int': 'int32',
+    'long': 'int64',
+    'float': 'float32',
+    'double': 'float64',
+    'bytes': 'bytes',
+    'string': 'STRING'
+}
+
+;

@@ -25,20 +25,20 @@ Fabric-entitlements-avro-def "Fabric entitlements avro definitions" [package="co
             @fieldDescription = "The externalPartyIdentifier is an identifier which is NOT a Party Id, but can be used to correlate the Party to a Party Id. For example, a CRN could be used to correlate the customer, or a UUID, or a CAP CIS Id"
         source <: string:
             @fieldDescription = "The service identifier that produced the event"
-        occurrenceDateTime <: datetime:
+        occurrenceDateTime <: datetime[~timestamp-millis]:
             @fieldDescription = "The date and time, to millisecond precision, that this event occurred"     
         traceId <: string
         spanId <: string
-        parentSpanId <: string
+        parentSpanId <: NullOrString
         correlationId <: int64:
             @fieldDescription = "This would be the Global Sequence Id, unique to each event generated out of MDM"
         hierarchy <: string:
             @fieldDescription = "Business Event Type Hierarchy, i.e. AU/RETAIL/CARDS"
-        ignore <: bool:
+        ignore <: NullOrBool:
             @fieldDescription = "Event should be ignored by the consumers"
         eventType <: string:
             @fieldDescription = "Event Data would be specific for a eventType so this field would help identify what to expect in Event Data"
-        expiryDateTime <: datetime:
+        expiryDateTime <: NullOrLong:
             @fieldDescription = "The event should be ignored by consumers after the specified expire date and time"
         survivorParty <: SurvivorParty
 
@@ -61,55 +61,110 @@ Fabric-entitlements-avro-def "Fabric entitlements avro definitions" [package="co
             @fieldDescription = "The date and time, to millisecond precision, the record was updated last"
         lastUpdatedBy <: string:
             @fieldDescription = "The person / account who last updated the record"
-        version <: int:
+        version <: int32:
             @fieldDescription = "Party level sequence Id. This can help identify missed events, if any"
-        createdDate <: string:
+        createdDate <: NullOrString:
             @fieldDescription = "The date and time, to millisecond precision, the record was first created"
-        sinceDate <: string
-        leftDate <: string
-        partyStatus <: string:
+        sinceDate <: NullOrString
+        leftDate <: NullOrString
+        partyStatus <: NullOrString:
             @fieldDescription = "Indicator whether a Party is Active / Inactive / Deceased / etc"
-        partyType <: Organisation
-        identifiers <: sequence of Identifier
-        privacyPreferences <: sequence of PrivacyPreference
-        addresses <: sequence of Address
-        partyEquivalents <: sequence of PartyEquivalent
-        contactDetails <: sequence of ContactDetail
-        accounts <: sequence of Account
+        partyType <: NullOrOrganisation
+        identifiers <: NullOrIdentifiers
+        privacyPreferences <: NullOrPrivacyPreferences
+        addresses <: NullOrAddresses
+        partyEquivalents <: NullOrPartyEquivalents
+        contactDetails <: NullOrContactDetails
+        accounts <: NullOrAccounts
+
+    !union NullOrOrganisation:
+        Null
+        Organisation
 
     !type Organisation:
-        organisationType <: string:
+        organisationType <: NullOrString:
             @fieldDescription = "Type of Organisation"
-        industry <: string:
+        industry <: NullOrString:
             @fieldDescription = "Type of Industry the Organisation is in"
-        establishedDate <: string
-        kycVerificationLevel <: string
-        kycStatus <: string
-        bankruptDate <: string
-        organisationNames <: sequence of OrganisationName
+        establishedDate <: NullOrString
+        kycVerificationLevel <: NullOrString
+        kycStatus <: NullOrString
+        bankruptDate <: NullOrString
+        organisationNames <: NullOrOrganisationNames
 
+    !union NullOrOrganisationNames:
+        Null
+        OrganisationName
+
+    !alias OrganisationNames:
+        sequence of OrganisationName
+    
     !type OrganisationName:
         performedAction <: PerformedAction
         nameUsageType <: string:
             @fieldDescription = "This would be the business key for uniquely identifying Organisation Name business object"
-        orgName <: string
-        startDate <: string
-        endDate <: string
-        source <: string
+        orgName <: NullOrString
+        startDate <: NullOrString
+        endDate <: NullOrString
+        source <: NullOrString
+
+    !type Person:
+        maritalStatus <: NullOrString
+        employeeIndicator <: NullOrString
+        employerName <: NullOrString
+        birthDate <: NullOrString
+        deceasedDate <: NullOrString
+        bankruptDate <: NullOrString
+        occupation <: NullOrString
+        kycStatus <: NullOrString
+        kycVerificationLevel <: NullOrString
+        displayName <: NullOrString
+        gender <: NullOrString:
+            @fieldDescription="Example: M, F"
+        personNames <: NullOrPersonNames
+    
+    !type PersonName:
+        performedAction <: PerformedAction
+        nameUsageType <: string:
+            @fieldDescription="This would be the business key for uniquely identifying Person Name business object"
+        prefix <: NullOrString
+        suffix <: NullOrString
+        givenNameOne <: NullOrString
+        givenNameTwo <: NullOrString
+        givenNameThree <: NullOrString
+        givenNameFour <: NullOrString
+        lastName <: NullOrString
+        startDate <: NullOrString
+        endDate <: NullOrString
+        source <: NullOrString
+
+    !alias PersonNames:
+        sequence of PersonName
+
+    !union NullOrPersonNames:
+        Null
+        PersonNames
 
     !type Identifier:
         performedAction <: PerformedAction
         identificationType <: string:
             @fieldDescription = "Type of Identifier e.g., Passport / Driving License etc"
-        occurrenceNumber <: int:
+        occurrenceNumber <: int32:
             @fieldDescription = "A party can have multiple identifiers for the same identificationType and so this should also be considered as part of composite business key"
         startDate <: string:
             @fieldDescription = "This should also be considered as part of composite business key for this object"
-        identificationNumber <: string
-        issueLocation <: string
-        expiryDate <: string
-        endDate <: string
-        source <: string
+        identificationNumber <: NullOrString
+        issueLocation <: NullOrString
+        expiryDate <: NullOrString
+        endDate <: NullOrString
+        source <: NullOrString
+
+    !alias Identifiers:
+        sequence of Identifier
+        
+    !type NullOrIdentifiers:
+        Null
+        Identifiers
 
     !type PrivacyPreference:
         performedAction <: PerformedAction
@@ -117,78 +172,145 @@ Fabric-entitlements-avro-def "Fabric entitlements avro definitions" [package="co
             @fieldDescription = "Privacy Preference Category. This is part of the business key for this object"
         privacyPreferenceType <: string:
             @fieldDescription = "Privacy Preference Type. This along with the category would be the business key for this object"
-        privacyPreferenceEntity <: string
-        privacyPreferenceReason <: string
-        privacyPreferenceValue <: string
-        startDate <: string
-        endDate <: string
-        source <: string
+        privacyPreferenceEntity <: NullOrString
+        privacyPreferenceReason <: NullOrString
+        privacyPreferenceValue <: NullOrString
+        startDate <: NullOrString
+        endDate <: NullOrString
+        source <: NullOrString
+
+    !alias PrivacyPreferences:
+        sequence of PrivacyPreference
+
+    !union NullOrPrivacyPreferences:
+        Null
+        PrivacyPreferences
 
     !type Address:
         performedAction <: PerformedAction
         addressUsage <: string:
             @fieldDescription = "Business key for this object"
-        addressLineOne <: string
-        addressLineTwo <: string
-        addressLineThree <: string
-        addressLineFour <: string
-        addressLineFive <: string
-        addressLineSix <: string
-        city <: string
-        zip <: string
-        state <: string
-        country <: string
-        deliveryId <: string
-        startDate <: string
-        endDate <: string
-        source <: string
+        addressLineOne <: NullOrString
+        addressLineTwo <: NullOrString
+        addressLineThree <: NullOrString
+        addressLineFour <: NullOrString
+        addressLineFive <: NullOrString
+        addressLineSix <: NullOrString
+        city <: NullOrString
+        zip <: NullOrString
+        state <: NullOrString
+        country <: NullOrString
+        deliveryId <: NullOrString
+        startDate <: NullOrString
+        endDate <: NullOrString
+        source <: NullOrString
+
+    !alias Addresses:
+        sequence of Address
+
+    !union NullOrAddresses:
+        Null
+        Addresses
 
     !type PartyEquivalent:
         performedAction <: PerformedAction
         system <: string
         systemId <: string
 
+    !alias PartyEquivalents:
+        sequence of PartyEquivalent
+        
+    !union NullOrPartyEquivalents:
+        Null
+        PartyEquivalents
+
     !type ContactDetail:
         performedAction <: PerformedAction
         contactMethod <: string:
             @fieldDescription = "Business key for this object. Should be used in conjunction with occurrenceNumber"
-        occurrenceNumber <: int:
+        occurrenceNumber <: int32:
             @fieldDescription = "Part of the composite business key for this object"
-        contactCategory <: string:
+        contactCategory <: NullOrString:
             @fieldDescription = "Primary Category: Example: Telephone / Email"
-        contactReference <: string:
+        contactReference <: NullOrString:
             @fieldDescription = "The actual mobile / phone number or email id"
-        startDate <: string
-        endDate <: string
-        source <: string
+        startDate <: NullOrString
+        endDate <: NullOrString
+        source <: NullOrString
+
+    !alias ContactDetails:
+        sequence of ContactDetail
+
+    !union NullOrContactDetails:
+        Null
+        ContactDetail
+
+    !alias Accounts:
+        sequence of Account
+
+    !union NullOrAccounts:
+        Null
+        Accounts
 
     !type Account:
         performedAction <: PerformedAction
         accountNumber <: string
         productType <: string
-        source <: string
-        lastUpdatedDate <: string
-        lastUpdatedBy <: string
-        relationshipTypes <: sequence of PartyAccountRelationship:
+        source <: NullOrString
+        lastUpdatedDate <: NullOrString
+        lastUpdatedBy <: NullOrString
+        relationshipTypes <: NullOrPartyAccountRelationships:
             @fieldDescription = "Relationship between party and account e.g., Sole Owner, Joint Owner, etc. A party can have one or more relationships with a given account e.g., Guarantor and Power of Attorney"
         accountKey <: string:
             @fieldDescription = "Account key. System-wide uniqueness is not guaranteed, so this along with source make up the business key for this object"
-        companyID <: string
-        branchID <: string
-        accountStatus <: string
-        subProductCode <: string
+        companyID <: NullOrString
+        branchID <: NullOrString
+        accountStatus <: NullOrString
+        subProductCode <: NullOrString
 
     !type PartyAccountRelationship:
         performedAction <: PerformedAction
         relationshipType <: string:
             @fieldDescription = "This would be the business key for uniquely identifying a Party-Account relation"
-        startDate <: string:
+        startDate <: NullOrString:
             @fieldDescription = "Relationship start date"
-        endDate <: string:
+        endDate <: NullOrString:
             @fieldDescription = "Relationship end date"
+
+    !alias PartyAccountRelationships:
+        sequence of PartyAccountRelationship
+
+    !union NullOrPartyAccountRelationships:
+        Null
+        PartyAccountRelationships
 
     !enum PerformedAction:
         add: 1
         update: 2
         delete: 3
         none: 4
+
+    !alias Null:
+        string
+
+    !alias TypeString:
+        string
+
+    !union NullOrString:
+        Null
+        TypeString
+    
+    !alias TypeBool:
+        bool
+    
+    !union NullOrBool:
+        Null
+        TypeBool    
+
+    !alias TypeLong:
+        int64
+
+    !union NullOrLong:
+        Null
+        TypeLong
+    

@@ -29,11 +29,11 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  175,
+          "line":  265,
           "col":  22
          },
          "end":  {
-          "line":  176,
+          "line":  266,
           "col":  8
          }
         }
@@ -43,81 +43,161 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  167,
+          "line":  257,
           "col":  25
          },
          "end":  {
-          "line":  167,
+          "line":  257,
           "col":  25
          }
         }
        },
        "accountStatus":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Account"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  178,
+          "line":  268,
           "col":  25
          },
          "end":  {
-          "line":  178,
+          "line":  268,
           "col":  25
          }
         }
        },
        "branchID":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Account"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  177,
+          "line":  267,
           "col":  20
          },
          "end":  {
-          "line":  177,
+          "line":  267,
           "col":  20
          }
         }
        },
        "companyID":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Account"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  176,
+          "line":  266,
           "col":  21
          },
          "end":  {
-          "line":  176,
+          "line":  266,
           "col":  21
          }
         }
        },
        "lastUpdatedBy":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Account"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  171,
+          "line":  261,
           "col":  25
          },
          "end":  {
-          "line":  171,
+          "line":  261,
           "col":  25
          }
         }
        },
        "lastUpdatedDate":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Account"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  170,
+          "line":  260,
           "col":  27
          },
          "end":  {
-          "line":  170,
+          "line":  260,
           "col":  27
          }
         }
@@ -143,11 +223,11 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  166,
+          "line":  256,
           "col":  27
          },
          "end":  {
-          "line":  166,
+          "line":  256,
           "col":  27
          }
         }
@@ -157,44 +237,31 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  168,
+          "line":  258,
           "col":  23
          },
          "end":  {
-          "line":  168,
+          "line":  258,
           "col":  23
          }
         }
        },
        "relationshipTypes":  {
-        "sequence":  {
-         "typeRef":  {
-          "context":  {
-           "appname":  {
-            "part":  [
-             "Fabric-entitlements-avro-def"
-            ]
-           },
-           "path":  [
-            "Account"
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
            ]
           },
-          "ref":  {
-           "path":  [
-            "PartyAccountRelationship"
-           ]
-          }
+          "path":  [
+           "Account"
+          ]
          },
-         "sourceContext":  {
-          "file":  "fabric-entitlements.sysl",
-          "start":  {
-           "line":  173,
-           "col":  29
-          },
-          "end":  {
-           "line":  174,
-           "col":  8
-          }
+         "ref":  {
+          "path":  [
+           "NullOrPartyAccountRelationships"
+          ]
          }
         },
         "attrs":  {
@@ -205,39 +272,71 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  173,
+          "line":  263,
           "col":  29
          },
          "end":  {
-          "line":  174,
+          "line":  264,
           "col":  8
          }
         }
        },
        "source":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Account"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  169,
+          "line":  259,
           "col":  18
          },
          "end":  {
-          "line":  169,
+          "line":  259,
           "col":  18
          }
         }
        },
        "subProductCode":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Account"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  179,
+          "line":  269,
           "col":  26
          },
          "end":  {
-          "line":  179,
+          "line":  269,
           "col":  26
          }
         }
@@ -247,11 +346,54 @@
      "sourceContext":  {
       "file":  "fabric-entitlements.sysl",
       "start":  {
-       "line":  165,
+       "line":  255,
        "col":  4
       },
       "end":  {
-       "line":  181,
+       "line":  271,
+       "col":  4
+      }
+     }
+    },
+    "Accounts":  {
+     "sequence":  {
+      "typeRef":  {
+       "context":  {
+        "appname":  {
+         "part":  [
+          "Fabric-entitlements-avro-def"
+         ]
+        },
+        "path":  [
+         "Accounts"
+        ]
+       },
+       "ref":  {
+        "path":  [
+         "Account"
+        ]
+       }
+      },
+      "sourceContext":  {
+       "file":  "fabric-entitlements.sysl",
+       "start":  {
+        "line":  248,
+        "col":  4
+       },
+       "end":  {
+        "line":  251,
+        "col":  4
+       }
+      }
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  248,
+       "col":  4
+      },
+      "end":  {
+       "line":  251,
        "col":  4
       }
      }
@@ -260,85 +402,181 @@
      "tuple":  {
       "attrDefs":  {
        "addressLineFive":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Address"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  135,
+          "line":  197,
           "col":  27
          },
          "end":  {
-          "line":  135,
+          "line":  197,
           "col":  27
          }
         }
        },
        "addressLineFour":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Address"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  134,
+          "line":  196,
           "col":  27
          },
          "end":  {
-          "line":  134,
+          "line":  196,
           "col":  27
          }
         }
        },
        "addressLineOne":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Address"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  131,
+          "line":  193,
           "col":  26
          },
          "end":  {
-          "line":  131,
+          "line":  193,
           "col":  26
          }
         }
        },
        "addressLineSix":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Address"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  136,
+          "line":  198,
           "col":  26
          },
          "end":  {
-          "line":  136,
+          "line":  198,
           "col":  26
          }
         }
        },
        "addressLineThree":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Address"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  133,
+          "line":  195,
           "col":  28
          },
          "end":  {
-          "line":  133,
+          "line":  195,
           "col":  28
          }
         }
        },
        "addressLineTwo":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Address"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  132,
+          "line":  194,
           "col":  26
          },
          "end":  {
-          "line":  132,
+          "line":  194,
           "col":  26
          }
         }
@@ -353,67 +591,131 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  130,
+          "line":  192,
           "col":  24
          },
          "end":  {
-          "line":  131,
+          "line":  193,
           "col":  8
          }
         }
        },
        "city":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Address"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  137,
+          "line":  199,
           "col":  16
          },
          "end":  {
-          "line":  137,
+          "line":  199,
           "col":  16
          }
         }
        },
        "country":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Address"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  140,
+          "line":  202,
           "col":  19
          },
          "end":  {
-          "line":  140,
+          "line":  202,
           "col":  19
          }
         }
        },
        "deliveryId":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Address"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  141,
+          "line":  203,
           "col":  22
          },
          "end":  {
-          "line":  141,
+          "line":  203,
           "col":  22
          }
         }
        },
        "endDate":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Address"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  143,
+          "line":  205,
           "col":  19
          },
          "end":  {
-          "line":  143,
+          "line":  205,
           "col":  19
          }
         }
@@ -439,67 +741,131 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  128,
+          "line":  190,
           "col":  27
          },
          "end":  {
-          "line":  128,
+          "line":  190,
           "col":  27
          }
         }
        },
        "source":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Address"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  144,
+          "line":  206,
           "col":  18
          },
          "end":  {
-          "line":  144,
+          "line":  206,
           "col":  18
          }
         }
        },
        "startDate":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Address"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  142,
+          "line":  204,
           "col":  21
          },
          "end":  {
-          "line":  142,
+          "line":  204,
           "col":  21
          }
         }
        },
        "state":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Address"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  139,
+          "line":  201,
           "col":  17
          },
          "end":  {
-          "line":  139,
+          "line":  201,
           "col":  17
          }
         }
        },
        "zip":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Address"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  138,
+          "line":  200,
           "col":  15
          },
          "end":  {
-          "line":  138,
+          "line":  200,
           "col":  15
          }
         }
@@ -509,11 +875,54 @@
      "sourceContext":  {
       "file":  "fabric-entitlements.sysl",
       "start":  {
-       "line":  127,
+       "line":  189,
        "col":  4
       },
       "end":  {
-       "line":  146,
+       "line":  208,
+       "col":  4
+      }
+     }
+    },
+    "Addresses":  {
+     "sequence":  {
+      "typeRef":  {
+       "context":  {
+        "appname":  {
+         "part":  [
+          "Fabric-entitlements-avro-def"
+         ]
+        },
+        "path":  [
+         "Addresses"
+        ]
+       },
+       "ref":  {
+        "path":  [
+         "Address"
+        ]
+       }
+      },
+      "sourceContext":  {
+       "file":  "fabric-entitlements.sysl",
+       "start":  {
+        "line":  208,
+        "col":  4
+       },
+       "end":  {
+        "line":  211,
+        "col":  4
+       }
+      }
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  208,
+       "col":  4
+      },
+      "end":  {
+       "line":  211,
        "col":  4
       }
      }
@@ -522,7 +931,23 @@
      "tuple":  {
       "attrDefs":  {
        "contactCategory":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "ContactDetail"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "attrs":  {
          "fieldDescription":  {
           "s":  "Primary Category: Example: Telephone / Email"
@@ -531,11 +956,11 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  158,
+          "line":  234,
           "col":  27
          },
          "end":  {
-          "line":  159,
+          "line":  235,
           "col":  8
          }
         }
@@ -550,17 +975,33 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  154,
+          "line":  230,
           "col":  25
          },
          "end":  {
-          "line":  155,
+          "line":  231,
           "col":  8
          }
         }
        },
        "contactReference":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "ContactDetail"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "attrs":  {
          "fieldDescription":  {
           "s":  "The actual mobile / phone number or email id"
@@ -569,25 +1010,41 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  160,
+          "line":  236,
           "col":  28
          },
          "end":  {
-          "line":  161,
+          "line":  237,
           "col":  8
          }
         }
        },
        "endDate":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "ContactDetail"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  162,
+          "line":  238,
           "col":  19
          },
          "end":  {
-          "line":  162,
+          "line":  238,
           "col":  19
          }
         }
@@ -599,14 +1056,26 @@
           "s":  "Part of the composite business key for this object"
          }
         },
+        "constraint":  [
+         {
+          "range":  {
+           "min":  {
+            "i":  "-2147483648"
+           },
+           "max":  {
+            "i":  "2147483647"
+           }
+          }
+         }
+        ],
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  156,
+          "line":  232,
           "col":  28
          },
          "end":  {
-          "line":  157,
+          "line":  233,
           "col":  8
          }
         }
@@ -632,39 +1101,71 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  152,
+          "line":  228,
           "col":  27
          },
          "end":  {
-          "line":  152,
+          "line":  228,
           "col":  27
          }
         }
        },
        "source":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "ContactDetail"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  163,
+          "line":  239,
           "col":  18
          },
          "end":  {
-          "line":  163,
+          "line":  239,
           "col":  18
          }
         }
        },
        "startDate":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "ContactDetail"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  161,
+          "line":  237,
           "col":  21
          },
          "end":  {
-          "line":  161,
+          "line":  237,
           "col":  21
          }
         }
@@ -674,11 +1175,54 @@
      "sourceContext":  {
       "file":  "fabric-entitlements.sysl",
       "start":  {
-       "line":  151,
+       "line":  227,
        "col":  4
       },
       "end":  {
-       "line":  165,
+       "line":  241,
+       "col":  4
+      }
+     }
+    },
+    "ContactDetails":  {
+     "sequence":  {
+      "typeRef":  {
+       "context":  {
+        "appname":  {
+         "part":  [
+          "Fabric-entitlements-avro-def"
+         ]
+        },
+        "path":  [
+         "ContactDetails"
+        ]
+       },
+       "ref":  {
+        "path":  [
+         "ContactDetail"
+        ]
+       }
+      },
+      "sourceContext":  {
+       "file":  "fabric-entitlements.sysl",
+       "start":  {
+        "line":  241,
+        "col":  4
+       },
+       "end":  {
+        "line":  244,
+        "col":  4
+       }
+      }
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  241,
+       "col":  4
+      },
+      "end":  {
+       "line":  244,
        "col":  4
       }
      }
@@ -687,34 +1231,21 @@
      "tuple":  {
       "attrDefs":  {
        "accounts":  {
-        "sequence":  {
-         "typeRef":  {
-          "context":  {
-           "appname":  {
-            "part":  [
-             "Fabric-entitlements-avro-def"
-            ]
-           },
-           "path":  [
-            "EventData"
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
            ]
           },
-          "ref":  {
-           "path":  [
-            "Account"
-           ]
-          }
+          "path":  [
+           "EventData"
+          ]
          },
-         "sourceContext":  {
-          "file":  "fabric-entitlements.sysl",
-          "start":  {
-           "line":  78,
-           "col":  20
-          },
-          "end":  {
-           "line":  78,
-           "col":  32
-          }
+         "ref":  {
+          "path":  [
+           "NullOrAccounts"
+          ]
          }
         },
         "sourceContext":  {
@@ -725,39 +1256,26 @@
          },
          "end":  {
           "line":  78,
-          "col":  32
+          "col":  20
          }
         }
        },
        "addresses":  {
-        "sequence":  {
-         "typeRef":  {
-          "context":  {
-           "appname":  {
-            "part":  [
-             "Fabric-entitlements-avro-def"
-            ]
-           },
-           "path":  [
-            "EventData"
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
            ]
           },
-          "ref":  {
-           "path":  [
-            "Address"
-           ]
-          }
+          "path":  [
+           "EventData"
+          ]
          },
-         "sourceContext":  {
-          "file":  "fabric-entitlements.sysl",
-          "start":  {
-           "line":  75,
-           "col":  21
-          },
-          "end":  {
-           "line":  75,
-           "col":  33
-          }
+         "ref":  {
+          "path":  [
+           "NullOrAddresses"
+          ]
          }
         },
         "sourceContext":  {
@@ -768,39 +1286,26 @@
          },
          "end":  {
           "line":  75,
-          "col":  33
+          "col":  21
          }
         }
        },
        "contactDetails":  {
-        "sequence":  {
-         "typeRef":  {
-          "context":  {
-           "appname":  {
-            "part":  [
-             "Fabric-entitlements-avro-def"
-            ]
-           },
-           "path":  [
-            "EventData"
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
            ]
           },
-          "ref":  {
-           "path":  [
-            "ContactDetail"
-           ]
-          }
+          "path":  [
+           "EventData"
+          ]
          },
-         "sourceContext":  {
-          "file":  "fabric-entitlements.sysl",
-          "start":  {
-           "line":  77,
-           "col":  26
-          },
-          "end":  {
-           "line":  77,
-           "col":  38
-          }
+         "ref":  {
+          "path":  [
+           "NullOrContactDetails"
+          ]
          }
         },
         "sourceContext":  {
@@ -811,12 +1316,28 @@
          },
          "end":  {
           "line":  77,
-          "col":  38
+          "col":  26
          }
         }
        },
        "createdDate":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "EventData"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "attrs":  {
          "fieldDescription":  {
           "s":  "The date and time, to millisecond precision, the record was first created"
@@ -835,34 +1356,21 @@
         }
        },
        "identifiers":  {
-        "sequence":  {
-         "typeRef":  {
-          "context":  {
-           "appname":  {
-            "part":  [
-             "Fabric-entitlements-avro-def"
-            ]
-           },
-           "path":  [
-            "EventData"
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
            ]
           },
-          "ref":  {
-           "path":  [
-            "Identifier"
-           ]
-          }
+          "path":  [
+           "EventData"
+          ]
          },
-         "sourceContext":  {
-          "file":  "fabric-entitlements.sysl",
-          "start":  {
-           "line":  73,
-           "col":  23
-          },
-          "end":  {
-           "line":  73,
-           "col":  35
-          }
+         "ref":  {
+          "path":  [
+           "NullOrIdentifiers"
+          ]
          }
         },
         "sourceContext":  {
@@ -873,7 +1381,7 @@
          },
          "end":  {
           "line":  73,
-          "col":  35
+          "col":  23
          }
         }
        },
@@ -916,7 +1424,23 @@
         }
        },
        "leftDate":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "EventData"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
@@ -930,34 +1454,21 @@
         }
        },
        "partyEquivalents":  {
-        "sequence":  {
-         "typeRef":  {
-          "context":  {
-           "appname":  {
-            "part":  [
-             "Fabric-entitlements-avro-def"
-            ]
-           },
-           "path":  [
-            "EventData"
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
            ]
           },
-          "ref":  {
-           "path":  [
-            "PartyEquivalent"
-           ]
-          }
+          "path":  [
+           "EventData"
+          ]
          },
-         "sourceContext":  {
-          "file":  "fabric-entitlements.sysl",
-          "start":  {
-           "line":  76,
-           "col":  28
-          },
-          "end":  {
-           "line":  76,
-           "col":  40
-          }
+         "ref":  {
+          "path":  [
+           "NullOrPartyEquivalents"
+          ]
          }
         },
         "sourceContext":  {
@@ -968,12 +1479,28 @@
          },
          "end":  {
           "line":  76,
-          "col":  40
+          "col":  28
          }
         }
        },
        "partyStatus":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "EventData"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "attrs":  {
          "fieldDescription":  {
           "s":  "Indicator whether a Party is Active / Inactive / Deceased / etc"
@@ -1005,7 +1532,7 @@
          },
          "ref":  {
           "path":  [
-           "Organisation"
+           "NullOrOrganisation"
           ]
          }
         },
@@ -1052,34 +1579,21 @@
         }
        },
        "privacyPreferences":  {
-        "sequence":  {
-         "typeRef":  {
-          "context":  {
-           "appname":  {
-            "part":  [
-             "Fabric-entitlements-avro-def"
-            ]
-           },
-           "path":  [
-            "EventData"
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
            ]
           },
-          "ref":  {
-           "path":  [
-            "PrivacyPreference"
-           ]
-          }
+          "path":  [
+           "EventData"
+          ]
          },
-         "sourceContext":  {
-          "file":  "fabric-entitlements.sysl",
-          "start":  {
-           "line":  74,
-           "col":  30
-          },
-          "end":  {
-           "line":  74,
-           "col":  42
-          }
+         "ref":  {
+          "path":  [
+           "NullOrPrivacyPreferences"
+          ]
          }
         },
         "sourceContext":  {
@@ -1090,12 +1604,28 @@
          },
          "end":  {
           "line":  74,
-          "col":  42
+          "col":  30
          }
         }
        },
        "sinceDate":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "EventData"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
@@ -1115,6 +1645,18 @@
           "s":  "Party level sequence Id. This can help identify missed events, if any"
          }
         },
+        "constraint":  [
+         {
+          "range":  {
+           "min":  {
+            "i":  "-2147483648"
+           },
+           "max":  {
+            "i":  "2147483647"
+           }
+          }
+         }
+        ],
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
@@ -1214,7 +1756,23 @@
         }
        },
        "expiryDateTime":  {
-        "primitive":  "DATETIME",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Header"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrLong"
+          ]
+         }
+        },
         "attrs":  {
          "fieldDescription":  {
           "s":  "The event should be ignored by consumers after the specified expire date and time"
@@ -1252,7 +1810,23 @@
         }
        },
        "ignore":  {
-        "primitive":  "BOOL",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Header"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrBool"
+          ]
+         }
+        },
         "attrs":  {
          "fieldDescription":  {
           "s":  "Event should be ignored by the consumers"
@@ -1275,6 +1849,15 @@
         "attrs":  {
          "fieldDescription":  {
           "s":  "The date and time, to millisecond precision, that this event occurred"
+         },
+         "patterns":  {
+          "a":  {
+           "elt":  [
+            {
+             "s":  "timestamp-millis"
+            }
+           ]
+          }
          }
         },
         "sourceContext":  {
@@ -1309,7 +1892,23 @@
         }
        },
        "parentSpanId":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Header"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
@@ -1452,43 +2051,91 @@
      "tuple":  {
       "attrDefs":  {
        "endDate":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Identifier"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  111,
+          "line":  159,
           "col":  19
          },
          "end":  {
-          "line":  111,
+          "line":  159,
           "col":  19
          }
         }
        },
        "expiryDate":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Identifier"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  110,
+          "line":  158,
           "col":  22
          },
          "end":  {
-          "line":  110,
+          "line":  158,
           "col":  22
          }
         }
        },
        "identificationNumber":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Identifier"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  108,
+          "line":  156,
           "col":  32
          },
          "end":  {
-          "line":  108,
+          "line":  156,
           "col":  32
          }
         }
@@ -1503,25 +2150,41 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  103,
+          "line":  151,
           "col":  30
          },
          "end":  {
-          "line":  104,
+          "line":  152,
           "col":  8
          }
         }
        },
        "issueLocation":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Identifier"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  109,
+          "line":  157,
           "col":  25
          },
          "end":  {
-          "line":  109,
+          "line":  157,
           "col":  25
          }
         }
@@ -1533,14 +2196,26 @@
           "s":  "A party can have multiple identifiers for the same identificationType and so this should also be considered as part of composite business key"
          }
         },
+        "constraint":  [
+         {
+          "range":  {
+           "min":  {
+            "i":  "-2147483648"
+           },
+           "max":  {
+            "i":  "2147483647"
+           }
+          }
+         }
+        ],
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  105,
+          "line":  153,
           "col":  28
          },
          "end":  {
-          "line":  106,
+          "line":  154,
           "col":  8
          }
         }
@@ -1566,25 +2241,41 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  101,
+          "line":  149,
           "col":  27
          },
          "end":  {
-          "line":  101,
+          "line":  149,
           "col":  27
          }
         }
        },
        "source":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Identifier"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  112,
+          "line":  160,
           "col":  18
          },
          "end":  {
-          "line":  112,
+          "line":  160,
           "col":  18
          }
         }
@@ -1599,11 +2290,11 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  107,
+          "line":  155,
           "col":  21
          },
          "end":  {
-          "line":  108,
+          "line":  156,
           "col":  8
          }
         }
@@ -1613,11 +2304,773 @@
      "sourceContext":  {
       "file":  "fabric-entitlements.sysl",
       "start":  {
-       "line":  100,
+       "line":  148,
        "col":  4
       },
       "end":  {
-       "line":  114,
+       "line":  162,
+       "col":  4
+      }
+     }
+    },
+    "Identifiers":  {
+     "sequence":  {
+      "typeRef":  {
+       "context":  {
+        "appname":  {
+         "part":  [
+          "Fabric-entitlements-avro-def"
+         ]
+        },
+        "path":  [
+         "Identifiers"
+        ]
+       },
+       "ref":  {
+        "path":  [
+         "Identifier"
+        ]
+       }
+      },
+      "sourceContext":  {
+       "file":  "fabric-entitlements.sysl",
+       "start":  {
+        "line":  162,
+        "col":  4
+       },
+       "end":  {
+        "line":  165,
+        "col":  4
+       }
+      }
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  162,
+       "col":  4
+      },
+      "end":  {
+       "line":  165,
+       "col":  4
+      }
+     }
+    },
+    "Null":  {
+     "primitive":  "STRING",
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  293,
+       "col":  4
+      },
+      "end":  {
+       "line":  296,
+       "col":  4
+      }
+     }
+    },
+    "NullOrAccounts":  {
+     "oneOf":  {
+      "type":  [
+       {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "NullOrAccounts"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "Null"
+          ]
+         }
+        }
+       },
+       {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "NullOrAccounts"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "Accounts"
+          ]
+         }
+        }
+       }
+      ]
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  251,
+       "col":  4
+      },
+      "end":  {
+       "line":  255,
+       "col":  4
+      }
+     }
+    },
+    "NullOrAddresses":  {
+     "oneOf":  {
+      "type":  [
+       {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "NullOrAddresses"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "Null"
+          ]
+         }
+        }
+       },
+       {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "NullOrAddresses"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "Addresses"
+          ]
+         }
+        }
+       }
+      ]
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  211,
+       "col":  4
+      },
+      "end":  {
+       "line":  215,
+       "col":  4
+      }
+     }
+    },
+    "NullOrBool":  {
+     "oneOf":  {
+      "type":  [
+       {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "NullOrBool"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "Null"
+          ]
+         }
+        }
+       },
+       {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "NullOrBool"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "TypeBool"
+          ]
+         }
+        }
+       }
+      ]
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  306,
+       "col":  4
+      },
+      "end":  {
+       "line":  310,
+       "col":  4
+      }
+     }
+    },
+    "NullOrContactDetails":  {
+     "oneOf":  {
+      "type":  [
+       {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "NullOrContactDetails"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "Null"
+          ]
+         }
+        }
+       },
+       {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "NullOrContactDetails"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "ContactDetail"
+          ]
+         }
+        }
+       }
+      ]
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  244,
+       "col":  4
+      },
+      "end":  {
+       "line":  248,
+       "col":  4
+      }
+     }
+    },
+    "NullOrIdentifiers":  {
+     "tuple":  {
+      "attrDefs":  {
+       "Identifiers":  {
+        "noType":  {},
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  167,
+          "col":  8
+         },
+         "end":  {
+          "line":  167,
+          "col":  8
+         }
+        }
+       },
+       "Null":  {
+        "noType":  {},
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  166,
+          "col":  8
+         },
+         "end":  {
+          "line":  166,
+          "col":  8
+         }
+        }
+       }
+      }
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  165,
+       "col":  4
+      },
+      "end":  {
+       "line":  169,
+       "col":  4
+      }
+     }
+    },
+    "NullOrLong":  {
+     "oneOf":  {
+      "type":  [
+       {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "NullOrLong"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "Null"
+          ]
+         }
+        }
+       },
+       {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "NullOrLong"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "TypeLong"
+          ]
+         }
+        }
+       }
+      ]
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  313,
+       "col":  4
+      },
+      "end":  {
+       "line":  316,
+       "col":  4
+      }
+     }
+    },
+    "NullOrOrganisation":  {
+     "oneOf":  {
+      "type":  [
+       {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "NullOrOrganisation"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "Null"
+          ]
+         }
+        }
+       },
+       {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "NullOrOrganisation"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "Organisation"
+          ]
+         }
+        }
+       }
+      ]
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  80,
+       "col":  4
+      },
+      "end":  {
+       "line":  84,
+       "col":  4
+      }
+     }
+    },
+    "NullOrOrganisationNames":  {
+     "oneOf":  {
+      "type":  [
+       {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "NullOrOrganisationNames"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "Null"
+          ]
+         }
+        }
+       },
+       {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "NullOrOrganisationNames"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "OrganisationName"
+          ]
+         }
+        }
+       }
+      ]
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  95,
+       "col":  4
+      },
+      "end":  {
+       "line":  99,
+       "col":  4
+      }
+     }
+    },
+    "NullOrPartyAccountRelationships":  {
+     "oneOf":  {
+      "type":  [
+       {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "NullOrPartyAccountRelationships"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "Null"
+          ]
+         }
+        }
+       },
+       {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "NullOrPartyAccountRelationships"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "PartyAccountRelationships"
+          ]
+         }
+        }
+       }
+      ]
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  283,
+       "col":  4
+      },
+      "end":  {
+       "line":  287,
+       "col":  4
+      }
+     }
+    },
+    "NullOrPartyEquivalents":  {
+     "oneOf":  {
+      "type":  [
+       {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "NullOrPartyEquivalents"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "Null"
+          ]
+         }
+        }
+       },
+       {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "NullOrPartyEquivalents"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "PartyEquivalents"
+          ]
+         }
+        }
+       }
+      ]
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  223,
+       "col":  4
+      },
+      "end":  {
+       "line":  227,
+       "col":  4
+      }
+     }
+    },
+    "NullOrPersonNames":  {
+     "oneOf":  {
+      "type":  [
+       {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "NullOrPersonNames"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "Null"
+          ]
+         }
+        }
+       },
+       {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "NullOrPersonNames"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "PersonNames"
+          ]
+         }
+        }
+       }
+      ]
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  144,
+       "col":  4
+      },
+      "end":  {
+       "line":  148,
+       "col":  4
+      }
+     }
+    },
+    "NullOrPrivacyPreferences":  {
+     "oneOf":  {
+      "type":  [
+       {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "NullOrPrivacyPreferences"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "Null"
+          ]
+         }
+        }
+       },
+       {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "NullOrPrivacyPreferences"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "PrivacyPreferences"
+          ]
+         }
+        }
+       }
+      ]
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  185,
+       "col":  4
+      },
+      "end":  {
+       "line":  189,
+       "col":  4
+      }
+     }
+    },
+    "NullOrString":  {
+     "oneOf":  {
+      "type":  [
+       {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "NullOrString"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "Null"
+          ]
+         }
+        }
+       },
+       {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "NullOrString"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "TypeString"
+          ]
+         }
+        }
+       }
+      ]
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  299,
+       "col":  4
+      },
+      "end":  {
+       "line":  303,
        "col":  4
       }
      }
@@ -1735,35 +3188,83 @@
      "tuple":  {
       "attrDefs":  {
        "bankruptDate":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Organisation"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  88,
+          "line":  92,
           "col":  24
          },
          "end":  {
-          "line":  88,
+          "line":  92,
           "col":  24
          }
         }
        },
        "establishedDate":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Organisation"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  85,
+          "line":  89,
           "col":  27
          },
          "end":  {
-          "line":  85,
+          "line":  89,
           "col":  27
          }
         }
        },
        "industry":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Organisation"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "attrs":  {
          "fieldDescription":  {
           "s":  "Type of Industry the Organisation is in"
@@ -1772,88 +3273,123 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  84,
+          "line":  88,
           "col":  20
          },
          "end":  {
-          "line":  85,
+          "line":  89,
           "col":  8
          }
         }
        },
        "kycStatus":  {
-        "primitive":  "STRING",
-        "sourceContext":  {
-         "file":  "fabric-entitlements.sysl",
-         "start":  {
-          "line":  87,
-          "col":  21
-         },
-         "end":  {
-          "line":  87,
-          "col":  21
-         }
-        }
-       },
-       "kycVerificationLevel":  {
-        "primitive":  "STRING",
-        "sourceContext":  {
-         "file":  "fabric-entitlements.sysl",
-         "start":  {
-          "line":  86,
-          "col":  32
-         },
-         "end":  {
-          "line":  86,
-          "col":  32
-         }
-        }
-       },
-       "organisationNames":  {
-        "sequence":  {
-         "typeRef":  {
-          "context":  {
-           "appname":  {
-            "part":  [
-             "Fabric-entitlements-avro-def"
-            ]
-           },
-           "path":  [
-            "Organisation"
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
            ]
           },
-          "ref":  {
-           "path":  [
-            "OrganisationName"
-           ]
-          }
+          "path":  [
+           "Organisation"
+          ]
          },
-         "sourceContext":  {
-          "file":  "fabric-entitlements.sysl",
-          "start":  {
-           "line":  89,
-           "col":  29
-          },
-          "end":  {
-           "line":  89,
-           "col":  41
-          }
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
          }
         },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  89,
+          "line":  91,
+          "col":  21
+         },
+         "end":  {
+          "line":  91,
+          "col":  21
+         }
+        }
+       },
+       "kycVerificationLevel":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Organisation"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  90,
+          "col":  32
+         },
+         "end":  {
+          "line":  90,
+          "col":  32
+         }
+        }
+       },
+       "organisationNames":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Organisation"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrOrganisationNames"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  93,
           "col":  29
          },
          "end":  {
-          "line":  89,
-          "col":  41
+          "line":  93,
+          "col":  29
          }
         }
        },
        "organisationType":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Organisation"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "attrs":  {
          "fieldDescription":  {
           "s":  "Type of Organisation"
@@ -1862,11 +3398,11 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  82,
+          "line":  86,
           "col":  28
          },
          "end":  {
-          "line":  83,
+          "line":  87,
           "col":  8
          }
         }
@@ -1876,11 +3412,11 @@
      "sourceContext":  {
       "file":  "fabric-entitlements.sysl",
       "start":  {
-       "line":  80,
+       "line":  84,
        "col":  4
       },
       "end":  {
-       "line":  91,
+       "line":  95,
        "col":  4
       }
      }
@@ -1889,15 +3425,31 @@
      "tuple":  {
       "attrDefs":  {
        "endDate":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "OrganisationName"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  97,
+          "line":  108,
           "col":  19
          },
          "end":  {
-          "line":  97,
+          "line":  108,
           "col":  19
          }
         }
@@ -1912,25 +3464,41 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  94,
+          "line":  105,
           "col":  25
          },
          "end":  {
-          "line":  95,
+          "line":  106,
           "col":  8
          }
         }
        },
        "orgName":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "OrganisationName"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  95,
+          "line":  106,
           "col":  19
          },
          "end":  {
-          "line":  95,
+          "line":  106,
           "col":  19
          }
         }
@@ -1956,39 +3524,71 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  92,
+          "line":  103,
           "col":  27
          },
          "end":  {
-          "line":  92,
+          "line":  103,
           "col":  27
          }
         }
        },
        "source":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "OrganisationName"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  98,
+          "line":  109,
           "col":  18
          },
          "end":  {
-          "line":  98,
+          "line":  109,
           "col":  18
          }
         }
        },
        "startDate":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "OrganisationName"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  96,
+          "line":  107,
           "col":  21
          },
          "end":  {
-          "line":  96,
+          "line":  107,
           "col":  21
          }
         }
@@ -1998,11 +3598,54 @@
      "sourceContext":  {
       "file":  "fabric-entitlements.sysl",
       "start":  {
-       "line":  91,
+       "line":  102,
        "col":  4
       },
       "end":  {
-       "line":  100,
+       "line":  111,
+       "col":  4
+      }
+     }
+    },
+    "OrganisationNames":  {
+     "sequence":  {
+      "typeRef":  {
+       "context":  {
+        "appname":  {
+         "part":  [
+          "Fabric-entitlements-avro-def"
+         ]
+        },
+        "path":  [
+         "OrganisationNames"
+        ]
+       },
+       "ref":  {
+        "path":  [
+         "OrganisationName"
+        ]
+       }
+      },
+      "sourceContext":  {
+       "file":  "fabric-entitlements.sysl",
+       "start":  {
+        "line":  99,
+        "col":  4
+       },
+       "end":  {
+        "line":  102,
+        "col":  4
+       }
+      }
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  99,
+       "col":  4
+      },
+      "end":  {
+       "line":  102,
        "col":  4
       }
      }
@@ -2011,7 +3654,23 @@
      "tuple":  {
       "attrDefs":  {
        "endDate":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "PartyAccountRelationship"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "attrs":  {
          "fieldDescription":  {
           "s":  "Relationship end date"
@@ -2020,11 +3679,11 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  188,
+          "line":  278,
           "col":  19
          },
          "end":  {
-          "line":  190,
+          "line":  280,
           "col":  4
          }
         }
@@ -2050,11 +3709,11 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  182,
+          "line":  272,
           "col":  27
          },
          "end":  {
-          "line":  182,
+          "line":  272,
           "col":  27
          }
         }
@@ -2069,17 +3728,33 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  184,
+          "line":  274,
           "col":  28
          },
          "end":  {
-          "line":  185,
+          "line":  275,
           "col":  8
          }
         }
        },
        "startDate":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "PartyAccountRelationship"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "attrs":  {
          "fieldDescription":  {
           "s":  "Relationship start date"
@@ -2088,11 +3763,11 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  186,
+          "line":  276,
           "col":  21
          },
          "end":  {
-          "line":  187,
+          "line":  277,
           "col":  8
          }
         }
@@ -2102,11 +3777,54 @@
      "sourceContext":  {
       "file":  "fabric-entitlements.sysl",
       "start":  {
-       "line":  181,
+       "line":  271,
        "col":  4
       },
       "end":  {
-       "line":  190,
+       "line":  280,
+       "col":  4
+      }
+     }
+    },
+    "PartyAccountRelationships":  {
+     "sequence":  {
+      "typeRef":  {
+       "context":  {
+        "appname":  {
+         "part":  [
+          "Fabric-entitlements-avro-def"
+         ]
+        },
+        "path":  [
+         "PartyAccountRelationships"
+        ]
+       },
+       "ref":  {
+        "path":  [
+         "PartyAccountRelationship"
+        ]
+       }
+      },
+      "sourceContext":  {
+       "file":  "fabric-entitlements.sysl",
+       "start":  {
+        "line":  280,
+        "col":  4
+       },
+       "end":  {
+        "line":  283,
+        "col":  4
+       }
+      }
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  280,
+       "col":  4
+      },
+      "end":  {
+       "line":  283,
        "col":  4
       }
      }
@@ -2135,11 +3853,11 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  147,
+          "line":  216,
           "col":  27
          },
          "end":  {
-          "line":  147,
+          "line":  216,
           "col":  27
          }
         }
@@ -2149,11 +3867,11 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  148,
+          "line":  217,
           "col":  18
          },
          "end":  {
-          "line":  148,
+          "line":  217,
           "col":  18
          }
         }
@@ -2163,11 +3881,11 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  149,
+          "line":  218,
           "col":  20
          },
          "end":  {
-          "line":  149,
+          "line":  218,
           "col":  20
          }
         }
@@ -2177,11 +3895,54 @@
      "sourceContext":  {
       "file":  "fabric-entitlements.sysl",
       "start":  {
-       "line":  146,
+       "line":  215,
        "col":  4
       },
       "end":  {
-       "line":  151,
+       "line":  220,
+       "col":  4
+      }
+     }
+    },
+    "PartyEquivalents":  {
+     "sequence":  {
+      "typeRef":  {
+       "context":  {
+        "appname":  {
+         "part":  [
+          "Fabric-entitlements-avro-def"
+         ]
+        },
+        "path":  [
+         "PartyEquivalents"
+        ]
+       },
+       "ref":  {
+        "path":  [
+         "PartyEquivalent"
+        ]
+       }
+      },
+      "sourceContext":  {
+       "file":  "fabric-entitlements.sysl",
+       "start":  {
+        "line":  220,
+        "col":  4
+       },
+       "end":  {
+        "line":  223,
+        "col":  4
+       }
+      }
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  220,
+       "col":  4
+      },
+      "end":  {
+       "line":  223,
        "col":  4
       }
      }
@@ -2198,12 +3959,803 @@
      "sourceContext":  {
       "file":  "fabric-entitlements.sysl",
       "start":  {
-       "line":  190,
+       "line":  287,
        "col":  4
       },
       "end":  {
-       "line":  194,
-       "col":  15
+       "line":  293,
+       "col":  4
+      }
+     }
+    },
+    "Person":  {
+     "tuple":  {
+      "attrDefs":  {
+       "bankruptDate":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Person"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  117,
+          "col":  24
+         },
+         "end":  {
+          "line":  117,
+          "col":  24
+         }
+        }
+       },
+       "birthDate":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Person"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  115,
+          "col":  21
+         },
+         "end":  {
+          "line":  115,
+          "col":  21
+         }
+        }
+       },
+       "deceasedDate":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Person"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  116,
+          "col":  24
+         },
+         "end":  {
+          "line":  116,
+          "col":  24
+         }
+        }
+       },
+       "displayName":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Person"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  121,
+          "col":  23
+         },
+         "end":  {
+          "line":  121,
+          "col":  23
+         }
+        }
+       },
+       "employeeIndicator":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Person"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  113,
+          "col":  29
+         },
+         "end":  {
+          "line":  113,
+          "col":  29
+         }
+        }
+       },
+       "employerName":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Person"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  114,
+          "col":  24
+         },
+         "end":  {
+          "line":  114,
+          "col":  24
+         }
+        }
+       },
+       "gender":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Person"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "Example: M, F"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  123,
+          "col":  18
+         },
+         "end":  {
+          "line":  124,
+          "col":  8
+         }
+        }
+       },
+       "kycStatus":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Person"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  119,
+          "col":  21
+         },
+         "end":  {
+          "line":  119,
+          "col":  21
+         }
+        }
+       },
+       "kycVerificationLevel":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Person"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  120,
+          "col":  32
+         },
+         "end":  {
+          "line":  120,
+          "col":  32
+         }
+        }
+       },
+       "maritalStatus":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Person"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  112,
+          "col":  25
+         },
+         "end":  {
+          "line":  112,
+          "col":  25
+         }
+        }
+       },
+       "occupation":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Person"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  118,
+          "col":  22
+         },
+         "end":  {
+          "line":  118,
+          "col":  22
+         }
+        }
+       },
+       "personNames":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "Person"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrPersonNames"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  124,
+          "col":  23
+         },
+         "end":  {
+          "line":  124,
+          "col":  23
+         }
+        }
+       }
+      }
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  111,
+       "col":  4
+      },
+      "end":  {
+       "line":  126,
+       "col":  4
+      }
+     }
+    },
+    "PersonName":  {
+     "tuple":  {
+      "attrDefs":  {
+       "endDate":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "PersonName"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  138,
+          "col":  19
+         },
+         "end":  {
+          "line":  138,
+          "col":  19
+         }
+        }
+       },
+       "givenNameFour":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "PersonName"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  135,
+          "col":  25
+         },
+         "end":  {
+          "line":  135,
+          "col":  25
+         }
+        }
+       },
+       "givenNameOne":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "PersonName"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  132,
+          "col":  24
+         },
+         "end":  {
+          "line":  132,
+          "col":  24
+         }
+        }
+       },
+       "givenNameThree":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "PersonName"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  134,
+          "col":  26
+         },
+         "end":  {
+          "line":  134,
+          "col":  26
+         }
+        }
+       },
+       "givenNameTwo":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "PersonName"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  133,
+          "col":  24
+         },
+         "end":  {
+          "line":  133,
+          "col":  24
+         }
+        }
+       },
+       "lastName":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "PersonName"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  136,
+          "col":  20
+         },
+         "end":  {
+          "line":  136,
+          "col":  20
+         }
+        }
+       },
+       "nameUsageType":  {
+        "primitive":  "STRING",
+        "attrs":  {
+         "fieldDescription":  {
+          "s":  "This would be the business key for uniquely identifying Person Name business object"
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  129,
+          "col":  25
+         },
+         "end":  {
+          "line":  130,
+          "col":  8
+         }
+        }
+       },
+       "performedAction":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "PersonName"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "PerformedAction"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  127,
+          "col":  27
+         },
+         "end":  {
+          "line":  127,
+          "col":  27
+         }
+        }
+       },
+       "prefix":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "PersonName"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  130,
+          "col":  18
+         },
+         "end":  {
+          "line":  130,
+          "col":  18
+         }
+        }
+       },
+       "source":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "PersonName"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  139,
+          "col":  18
+         },
+         "end":  {
+          "line":  139,
+          "col":  18
+         }
+        }
+       },
+       "startDate":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "PersonName"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  137,
+          "col":  21
+         },
+         "end":  {
+          "line":  137,
+          "col":  21
+         }
+        }
+       },
+       "suffix":  {
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "PersonName"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
+        "sourceContext":  {
+         "file":  "fabric-entitlements.sysl",
+         "start":  {
+          "line":  131,
+          "col":  18
+         },
+         "end":  {
+          "line":  131,
+          "col":  18
+         }
+        }
+       }
+      }
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  126,
+       "col":  4
+      },
+      "end":  {
+       "line":  141,
+       "col":  4
+      }
+     }
+    },
+    "PersonNames":  {
+     "sequence":  {
+      "typeRef":  {
+       "context":  {
+        "appname":  {
+         "part":  [
+          "Fabric-entitlements-avro-def"
+         ]
+        },
+        "path":  [
+         "PersonNames"
+        ]
+       },
+       "ref":  {
+        "path":  [
+         "PersonName"
+        ]
+       }
+      },
+      "sourceContext":  {
+       "file":  "fabric-entitlements.sysl",
+       "start":  {
+        "line":  141,
+        "col":  4
+       },
+       "end":  {
+        "line":  144,
+        "col":  4
+       }
+      }
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  141,
+       "col":  4
+      },
+      "end":  {
+       "line":  144,
+       "col":  4
       }
      }
     },
@@ -2211,15 +4763,31 @@
      "tuple":  {
       "attrDefs":  {
        "endDate":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "PrivacyPreference"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  124,
+          "line":  179,
           "col":  19
          },
          "end":  {
-          "line":  124,
+          "line":  179,
           "col":  19
          }
         }
@@ -2245,11 +4813,11 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  115,
+          "line":  170,
           "col":  27
          },
          "end":  {
-          "line":  115,
+          "line":  170,
           "col":  27
          }
         }
@@ -2264,39 +4832,71 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  117,
+          "line":  172,
           "col":  37
          },
          "end":  {
-          "line":  118,
+          "line":  173,
           "col":  8
          }
         }
        },
        "privacyPreferenceEntity":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "PrivacyPreference"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  120,
+          "line":  175,
           "col":  35
          },
          "end":  {
-          "line":  120,
+          "line":  175,
           "col":  35
          }
         }
        },
        "privacyPreferenceReason":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "PrivacyPreference"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  121,
+          "line":  176,
           "col":  35
          },
          "end":  {
-          "line":  121,
+          "line":  176,
           "col":  35
          }
         }
@@ -2311,53 +4911,101 @@
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  119,
+          "line":  174,
           "col":  33
          },
          "end":  {
-          "line":  120,
+          "line":  175,
           "col":  8
          }
         }
        },
        "privacyPreferenceValue":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "PrivacyPreference"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  122,
+          "line":  177,
           "col":  34
          },
          "end":  {
-          "line":  122,
+          "line":  177,
           "col":  34
          }
         }
        },
        "source":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "PrivacyPreference"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  125,
+          "line":  180,
           "col":  18
          },
          "end":  {
-          "line":  125,
+          "line":  180,
           "col":  18
          }
         }
        },
        "startDate":  {
-        "primitive":  "STRING",
+        "typeRef":  {
+         "context":  {
+          "appname":  {
+           "part":  [
+            "Fabric-entitlements-avro-def"
+           ]
+          },
+          "path":  [
+           "PrivacyPreference"
+          ]
+         },
+         "ref":  {
+          "path":  [
+           "NullOrString"
+          ]
+         }
+        },
         "sourceContext":  {
          "file":  "fabric-entitlements.sysl",
          "start":  {
-          "line":  123,
+          "line":  178,
           "col":  21
          },
          "end":  {
-          "line":  123,
+          "line":  178,
           "col":  21
          }
         }
@@ -2367,11 +5015,54 @@
      "sourceContext":  {
       "file":  "fabric-entitlements.sysl",
       "start":  {
-       "line":  114,
+       "line":  169,
        "col":  4
       },
       "end":  {
-       "line":  127,
+       "line":  182,
+       "col":  4
+      }
+     }
+    },
+    "PrivacyPreferences":  {
+     "sequence":  {
+      "typeRef":  {
+       "context":  {
+        "appname":  {
+         "part":  [
+          "Fabric-entitlements-avro-def"
+         ]
+        },
+        "path":  [
+         "PrivacyPreferences"
+        ]
+       },
+       "ref":  {
+        "path":  [
+         "PrivacyPreference"
+        ]
+       }
+      },
+      "sourceContext":  {
+       "file":  "fabric-entitlements.sysl",
+       "start":  {
+        "line":  182,
+        "col":  4
+       },
+       "end":  {
+        "line":  185,
+        "col":  4
+       }
+      }
+     },
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  182,
+       "col":  4
+      },
+      "end":  {
+       "line":  185,
        "col":  4
       }
      }
@@ -2517,6 +5208,60 @@
       },
       "end":  {
        "line":  58,
+       "col":  4
+      }
+     }
+    },
+    "TypeBool":  {
+     "primitive":  "BOOL",
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  303,
+       "col":  4
+      },
+      "end":  {
+       "line":  306,
+       "col":  4
+      }
+     }
+    },
+    "TypeLong":  {
+     "primitive":  "INT",
+     "constraint":  [
+      {
+       "range":  {
+        "min":  {
+         "i":  "-9223372036854775808"
+        },
+        "max":  {
+         "i":  "9223372036854775807"
+        }
+       }
+      }
+     ],
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  310,
+       "col":  4
+      },
+      "end":  {
+       "line":  313,
+       "col":  4
+      }
+     }
+    },
+    "TypeString":  {
+     "primitive":  "STRING",
+     "sourceContext":  {
+      "file":  "fabric-entitlements.sysl",
+      "start":  {
+       "line":  296,
+       "col":  4
+      },
+      "end":  {
+       "line":  299,
        "col":  4
       }
      }
