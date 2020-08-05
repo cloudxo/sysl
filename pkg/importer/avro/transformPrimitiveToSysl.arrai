@@ -1,0 +1,13 @@
+# Transform Avro primitive types to Sysl ones
+let t = \avroType
+    cond avroType {
+        'null': 'null',
+        'boolean': 'bool',
+        'int': 'int32',
+        'long': 'int64',
+        'float': 'float32',
+        'double': 'float64',
+        'bytes': "bytes[size='8']",
+        'string': 'string'               
+    }
+;t

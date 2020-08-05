@@ -1,0 +1,14 @@
+# Transform Avro enum to Sysl enum
+let t = \enum
+
+$`
+!enum ${enum('name').s}${let default = enum('default')? .s:""; cond default {"":":", _:'[default="' + default + '"]:'}}
+    ${let doc = enum('doc')? .s:""; cond doc {"":"", _:'@description="' + doc + '"'}}
+    ${enum('symbols').a >>> \i \item (item.s + ": " + $'${i}')::\i}
+${
+let aliases = enum('aliases')? .a:[]; 
+aliases >> ($`
+
+!alias ${.s}:
+    ${enum('name').s}`)::\n}
+`;t
