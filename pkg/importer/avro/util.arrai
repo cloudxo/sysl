@@ -1,0 +1,10 @@
+# Utilities
+
+# Pretty annotation array
+let prettyAnnotations = \annotationArray
+let str = $`${let a = annotationArray where .@item != ""; a >>> \i \item item::, }`;
+cond str {'':$'', _:$'[${str}]'}
+;
+
+let util = (prettyAnnotations: prettyAnnotations);
+util
