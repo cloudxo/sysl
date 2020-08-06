@@ -23,23 +23,6 @@ $'
     }
 }
 '
-
-
-
 ;
 
 avroTransform("../test-avro/fabric-entitlements.avsc", "Test")
-
-let walkThrough = \type
-cond type {
-    'null': ,
-    'boolean': '',
-    'int': 'int32',
-    'long': 'int64',
-    'float': 'float32',
-    'double': 'float64',
-    'bytes': 'bytes',
-    'string': 'STRING'
-}
-
-;

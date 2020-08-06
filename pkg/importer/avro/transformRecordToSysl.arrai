@@ -1,0 +1,28 @@
+# Transform Avro record to Sysl record
+let util = //{./util};
+
+let t = \record
+
+let namespace = record('namespace')? .s:""; let namespaceTxt = cond namespace {"":"", _:'namespace="' + namespace + '"'};
+$`
+!record ${record('name').s}${util.prettyAnnotations([namespaceTxt])}:
+    ${'\t'}${let doc = record('doc')? .s:""; cond doc {"":"", _:'@description="' + doc + '"'}}
+    ${
+        let fields = record('fields')? .a:[]; 
+        fields >> ($`
+            ${'\t'}${.('name').s} <: ${
+                    util.transformType(.('type'))
+            }${
+                let doc = .('doc')? .s:""; cond doc {"":"", _: ':\n\t\t@description="' + doc + '"'}
+            }    
+        `)::
+    }
+
+${
+let aliases = record('aliases')? .a:[]; 
+aliases >> ($`
+
+!alias ${.s}:
+    ${record('name').s}`)::\n
+}
+`;t

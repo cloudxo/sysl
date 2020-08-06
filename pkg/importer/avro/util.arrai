@@ -6,5 +6,41 @@ let str = $`${let a = annotationArray where .@item != ""; a >>> \i \item item::,
 cond str {'':$'', _:$'[${str}]'}
 ;
 
-let util = (prettyAnnotations: prettyAnnotations);
+# Transform Avro primitive types to Sysl ones
+let transformPrimitiveType = \avroType
+    cond avroType {
+        'null': 'string[~null]',
+        'boolean': 'bool',
+        'int': 'int32',
+        'long': 'int64',
+        'float': 'float32',
+        'double': 'float64',
+        'bytes': "bytes[size='8']",
+        'string': 'string',
+        _: "NotPrimitive"               
+    }
+;
+
+# Transform Avro complex types to Sysl ones
+let transformComplexType = \avroType
+    cond avroType {
+        'PerformedAction': 'PerformedAction'
+    }
+;
+
+let transformType = \avroType
+    let sType = avroType.s?:""; # only one type
+    let mTypes = avroType.a?:[]; # multiple types
+    cond sType {
+        "": mTypes >> let primitive = transformPrimitiveType(.s); cond primitive {'NotPrimitive':transformComplexType(sType), _:primitive}
+        ,
+        _: let primitive = transformPrimitiveType(sType);
+            cond primitive {'NotPrimitive':transformComplexType(sType), _:primitive}
+    }
+;
+
+let util = (
+    prettyAnnotations: prettyAnnotations,
+    transformType: transformType
+);
 util

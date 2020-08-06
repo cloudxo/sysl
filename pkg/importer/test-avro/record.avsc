@@ -1,0 +1,35 @@
+{
+    "name": "PartyAccountRelationship",
+    "type": "record",
+    "namespace": "com.anzx",
+    "doc": "test",
+    "fields": [
+        {
+        "name": "performedAction",
+        "type": "PerformedAction"
+        },
+        {
+        "name": "relationshipType",
+        "type": "string",
+        "doc": "This would be the business key for uniquely identifying a Party-Account relation"
+        },
+        {
+        "name": "startDate",
+        "type": [
+            "null",
+            "string"
+        ],
+        "default": null,
+        "doc": "Relationship start date"
+        },
+        {
+        "name": "endDate",
+        "type": [
+            "null",
+            "string"
+        ],
+        "default": null,
+        "doc": "Relationship end date"
+        }
+    ]
+}
