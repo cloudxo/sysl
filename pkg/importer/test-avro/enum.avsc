@@ -1,0 +1,17 @@
+{
+    "name": "performedAction",
+    "type": {
+      "type": "enum",
+      "namespace": "com.example",
+      "doc": "hello",
+      "name": "PerformedAction",
+      "symbols": [
+        "add",
+        "update",
+        "delete",
+        "none"
+      ],
+    "default": "add",
+    "aliases": ["hello", "bcc"]
+    }
+  }
