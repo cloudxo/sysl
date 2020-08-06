@@ -1,8 +1,14 @@
 # Transform Avro enum to Sysl enum
+let util = //{./util};
+
 let t = \enum
 
+let namespace = enum('namespace')? .s:""; let namespaceTxt = cond namespace {"":"", _:'namespace="' + namespace + '"'};
+let default = enum('default')? .s:""; let defaultTxt = cond default {"":"", _:'default="' + default + '"'};
+let annotations = [namespaceTxt, defaultTxt];
+
 $`
-!enum ${enum('name').s}${let default = enum('default')? .s:""; cond default {"":":", _:'[default="' + default + '"]:'}}
+!enum ${enum('name').s}${util.prettyAnnotations(annotations)}:
     ${let doc = enum('doc')? .s:""; cond doc {"":"", _:'@description="' + doc + '"'}}
     ${enum('symbols').a >>> \i \item (item.s + ": " + $'${i}')::\i}
 ${
