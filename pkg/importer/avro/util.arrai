@@ -40,7 +40,7 @@ let transformType = \avroType
 ;
 
 let util = (
-    prettyAnnotations: prettyAnnotations,
-    transformType: transformType
+    : prettyAnnotations,
+    : transformType
 );
 util

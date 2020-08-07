@@ -1,0 +1,14 @@
+//test.assert.equal(`!enum PerformedAction[namespace="com.example", default="add"]:
+    @description="hello"
+    add: 0
+    update: 1
+    delete: 2
+    none: 3
+
+!alias hello:
+    PerformedAction
+
+!alias bcc:
+    PerformedAction`,
+//{./testHelper}.avroTransform(//{./../transformEnumToSysl}, 'enum.avsc')
+)
