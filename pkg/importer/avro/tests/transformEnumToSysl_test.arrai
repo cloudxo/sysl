@@ -5,10 +5,10 @@
     delete: 2
     none: 3
 
-!alias hello:
+!alias E1:
     PerformedAction
 
-!alias bcc:
+!alias E2:
     PerformedAction`,
 //{./testHelper}.avroTransform(//{./../transformEnumToSysl}, 'enum.avsc')
 )

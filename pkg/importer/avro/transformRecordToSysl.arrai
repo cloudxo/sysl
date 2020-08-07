@@ -17,12 +17,9 @@ $`
             }    
         `)::
     }
-
 ${
 let aliases = record('aliases')? .a:[]; 
 aliases >> ($`
-
 !alias ${.s}:
     ${record('name').s}`)::\n
-}
-`;t
+}`;t

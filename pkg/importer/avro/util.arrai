@@ -7,9 +7,9 @@ cond str {'':$'', _:$'[${str}]'}
 ;
 
 # Transform Avro primitive types to Sysl ones
-let transformPrimitiveType = \avroType
-    cond avroType {
-        'null': 'string[~null]',
+let transformPrimitiveType = \type
+    cond type {
+        'null': 'null',
         'boolean': 'bool',
         'int': 'int32',
         'long': 'int64',
@@ -22,20 +22,46 @@ let transformPrimitiveType = \avroType
 ;
 
 # Transform Avro complex types to Sysl ones
-let transformComplexType = \avroType
-    cond avroType {
+let transformComplexType = \type
+    cond type {
         'PerformedAction': 'PerformedAction'
     }
 ;
 
-let transformType = \avroType
-    let sType = avroType.s?:""; # only one type
-    let mTypes = avroType.a?:[]; # multiple types
+let combineNullType = \types
+    let len = types count;
+    cond len {
+        2:  
+    }    
+;
+
+let transformType = \type
+    let sType = type.s?:""; # only one type
+    let mTypes = type.a?:[]; # multiple types
     cond sType {
-        "": mTypes >> let primitive = transformPrimitiveType(.s); cond primitive {'NotPrimitive':transformComplexType(sType), _:primitive}
-        ,
-        _: let primitive = transformPrimitiveType(sType);
-            cond primitive {'NotPrimitive':transformComplexType(sType), _:primitive}
+        "": # Multiple types
+            mTypes >> 
+                let primitive = transformPrimitiveType(.s); 
+                cond primitive {
+                    'NotPrimitive': transformComplexType(sType), 
+                    _:  primitive
+                },
+        _:  # Only one type 
+            let primitive = transformPrimitiveType(sType);
+            cond primitive {
+                'NotPrimitive': transformComplexType(sType), 
+                _: cond primitive {
+                    "null": "string[~null]",
+                    _: primitive
+                }
+            }
+    }
+;
+
+let hasNullType = \types
+    let has = false;
+    types >> cond . {
+        "null": let has = true; 
     }
 ;
 

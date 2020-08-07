@@ -2,7 +2,8 @@
     "name": "PartyAccountRelationship",
     "type": "record",
     "namespace": "com.anzx",
-    "doc": "test",
+    "aliases": ["P1", "P2"],
+    "doc": "Party account relationship.",
     "fields": [
         {
         "name": "performedAction",
