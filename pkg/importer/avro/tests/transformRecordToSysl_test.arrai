@@ -1,0 +1,18 @@
+//test.assert.equal(
+`!record PartyAccountRelationship[namespace="com.anzx"]:
+    	@description="Party account relationship."
+    	performedAction <: PerformedAction
+    	relationshipType <: string:
+		    @description="This would be the business key for uniquely identifying a Party-Account relation"
+    	startDate <: ['string[~null]', 'string']:
+		    @description="Relationship start date"
+    	endDate <: ['string[~null]', 'string']:
+		    @description="Relationship end date"
+!alias P1:
+    PartyAccountRelationship
+
+!alias P2:
+    PartyAccountRelationship
+`,
+//{./testHelper}.avroTransform(//{./../transformRecordToSysl}, 'record.avsc')
+)
