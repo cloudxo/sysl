@@ -1,9 +1,15 @@
 # Utilities
 
+let getAnnotationS = \item \name
+    let annotation = item(name)? .s:"";
+    let annotationTxt = cond annotation {"":"", _:name + '="' + annotation + '"'};
+    annotationTxt
+;
+
 # Pretty annotation array
 let prettyAnnotations = \annotationArray
-let str = $`${let a = annotationArray where .@item != ""; a >>> \i \item item::, }`;
-cond str {'':$'', _:$'[${str}]'}
+    let str = $`${let a = annotationArray where .@item != ""; a >>> \i \item item::, }`;
+    cond str {'':$'', _:$'[${str}]'}
 ;
 
 # Transform Avro primitive types to Sysl ones
@@ -15,7 +21,7 @@ let transformPrimitiveType = \type
         'long': 'int64',
         'float': 'float32',
         'double': 'float64',
-        'bytes': "bytes[size='8']",
+        'bytes': "bytes",
         'string': 'string',
         _: "NotPrimitive"               
     }
@@ -28,11 +34,32 @@ let transformComplexType = \type
     }
 ;
 
-let combineNullType = \types
-    let len = types count;
-    cond len {
-        2:  
-    }    
+let buildUnionTypes = \types
+    let unionType = '!union ' + //seq.concat(types where .@item != 'null' rank (:.@) >> //str.title(.)) + ' ' + //seq.join(' ')(types);
+    unionTypes with unionType
+;
+
+# 
+let combineTypes = \types
+    let hasNull = //seq.contains(['null'])(types);
+    cond hasNull {
+        true:
+            cond //seq.has_prefix(['null'])(types) {
+                true: # types is ['null', 'string']
+                    cond types count {
+                        2: //seq.concat(types where .@item != 'null' rank (:.@)) + '?',
+                        _: //seq.concat(types where .@item != 'null' rank (:.@) >> //str.title(.)) + '?'
+                    }
+                ,
+                _: # types is ['string', 'null']
+                    cond types count {
+                        2: //seq.concat(types where .@item != 'null' rank (:.@)) + '?',
+                        _: //seq.concat(types where .@item != 'null' rank (:.@) >> //str.title(.)) + $'?'
+                    }
+            }
+        ,
+        _: //seq.concat(types >> //str.title(.))
+    }
 ;
 
 let transformType = \type
@@ -40,12 +67,7 @@ let transformType = \type
     let mTypes = type.a?:[]; # multiple types
     cond sType {
         "": # Multiple types
-            mTypes >> 
-                let primitive = transformPrimitiveType(.s); 
-                cond primitive {
-                    'NotPrimitive': transformComplexType(sType), 
-                    _:  primitive
-                },
+            combineTypes(mTypes >> .s), # [(s: 'null'), (s: 'string')] to ['null', 'string']
         _:  # Only one type 
             let primitive = transformPrimitiveType(sType);
             cond primitive {
@@ -58,15 +80,9 @@ let transformType = \type
     }
 ;
 
-let hasNullType = \types
-    let has = false;
-    types >> cond . {
-        "null": let has = true; 
-    }
-;
-
 let util = (
     : prettyAnnotations,
-    : transformType
+    : transformType,
+    : getAnnotationS,
 );
 util

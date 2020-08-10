@@ -1,22 +1,57 @@
 # Transform Avro record to Sysl record
 let util = //{./util};
 
+# Build type annotation like [union=["int32", "null"]]
+let buildTypeAnnotation = \type
+    let sType = type.s?:""; # only one type
+    let mTypes = type.a?:[]; # multiple types
+    cond sType {
+        "": 
+            let hasNull = //seq.contains(['null'])(type.a >> .s);
+            cond hasNull {
+                true:
+                    cond //seq.has_prefix(['null'])(type.a >> .s) {
+                        true: # types is ['null', 'string']
+                            '',
+                        _: # types is ['string', 'null']
+                            $'union=${type.a >> .s}'
+                    }
+                ,
+                _: ''
+            }
+        ,
+        _: ''
+    }
+;
+
+
 let t = \record
 
-let namespace = record('namespace')? .s:""; let namespaceTxt = cond namespace {"":"", _:'namespace="' + namespace + '"'};
 $`
-!record ${record('name').s}${util.prettyAnnotations([namespaceTxt])}:
-    ${'\t'}${let doc = record('doc')? .s:""; cond doc {"":"", _:'@description="' + doc + '"'}}
+!record ${record('name').s}${util.prettyAnnotations([util.getAnnotationS(record, 'namespace'), util.getAnnotationS(record, 'doc')])}:
     ${
         let fields = record('fields')? .a:[]; 
         fields >> ($`
-            ${'\t'}${.('name').s} <: ${
-                    util.transformType(.('type'))
+            ${'\t'}${.('name').s} <: ${util.transformType(.('type'))}${
+                util.prettyAnnotations(
+                    [
+                        buildTypeAnnotation(.('type')),
+                        util.getAnnotationS(., 'doc'),
+                        let default = .('default')?:""; cond default {"": "", ():'default="null"', _:""},
+                        util.getAnnotationS(., 'order'),
+                    ]
+                )
             }${
-                let doc = .('doc')? .s:""; cond doc {"":"", _: ':\n\t\t@description="' + doc + '"'}
-            }    
+                let field = .;
+                let aliases = .('aliases')? .a:[];
+                cond aliases {
+                    []: '',
+                    _: aliases >> \. 
+                        .s + '<:' + util.transformType(field('type'))
+                }::
+            }
         `)::
-    }
+    }    
 ${
 let aliases = record('aliases')? .a:[]; 
 aliases >> ($`

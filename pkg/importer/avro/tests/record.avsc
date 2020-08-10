@@ -26,11 +26,41 @@
         {
         "name": "endDate",
         "type": [
-            "null",
-            "string"
+            "string",
+            "null"
         ],
         "default": null,
         "doc": "Relationship end date"
+        },
+        {
+            "name": "closeDate",
+            "type": [
+                "null",
+                "string",
+                "int"
+            ],
+            "default": null,
+            "doc": "Relationship close date"
+        },
+        {
+            "name": "issueDate",
+            "type": [
+                "string",
+                "null",
+                "int"
+            ],
+            "default": null,
+            "doc": "Relationship issue date"
+        },
+        {
+            "name": "updateDate",
+            "type": [
+                "string",
+                "int"
+            ],
+            "default": null,
+            "doc": "Relationship update date",
+            "aliases": ["updateDate1", "updateDate2"]
         }
     ]
 }
