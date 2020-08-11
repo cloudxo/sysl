@@ -28,6 +28,7 @@ let transformPrimitiveType = \type
 ;
 
 # Transform Avro complex types to Sysl ones
+# TODO load all complex types
 let transformComplexType = \type
     cond type {
         'PerformedAction': 'PerformedAction'
@@ -41,8 +42,7 @@ let buildUnionTypes = \types
 
 # 
 let combineTypes = \types
-    let hasNull = //seq.contains(['null'])(types);
-    cond hasNull {
+    cond //seq.contains(['null'])(types) {
         true:
             cond //seq.has_prefix(['null'])(types) {
                 true: # types is ['null', 'string']
@@ -51,7 +51,7 @@ let combineTypes = \types
                         _: //seq.concat(types where .@item != 'null' rank (:.@) >> //str.title(.)) + '?'
                     }
                 ,
-                _: # types is ['string', 'null']
+                _: # types is ['string', 'null', ...]
                     cond types count {
                         2: //seq.concat(types where .@item != 'null' rank (:.@)) + '?',
                         _: //seq.concat(types where .@item != 'null' rank (:.@) >> //str.title(.)) + $'?'
@@ -63,20 +63,26 @@ let combineTypes = \types
 ;
 
 let transformType = \type
-    let sType = type.s?:""; # only one type
-    let mTypes = type.a?:[]; # multiple types
-    cond sType {
-        "": # Multiple types
-            combineTypes(mTypes >> .s), # [(s: 'null'), (s: 'string')] to ['null', 'string']
-        _:  # Only one type 
-            let primitive = transformPrimitiveType(sType);
+    cond type {
+        (:s):
+            let primitive = transformPrimitiveType(type.s);
             cond primitive {
-                'NotPrimitive': transformComplexType(sType), 
+                'NotPrimitive': transformComplexType(type.s), 
                 _: cond primitive {
                     "null": "string[~null]",
                     _: primitive
                 }
-            }
+            },
+        (:a):
+            combineTypes(type.a >> .s), # [(s: 'null'), (s: 'string')] to ['null', 'string']
+        _:
+            # it is array, map or fixed
+            cond type('type').s {
+                'array': 'sequence of ' + type('items').s,
+                'map': 'sequence of ',
+                'fixed': 'fixed',
+                _: "NONE" 
+            },
     }
 ;
 

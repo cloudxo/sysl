@@ -3,10 +3,8 @@ let util = //{./util};
 
 # Build type annotation like [union=["int32", "null"]]
 let buildTypeAnnotation = \type
-    let sType = type.s?:""; # only one type
-    let mTypes = type.a?:[]; # multiple types
-    cond sType {
-        "": 
+    cond type {
+        (:a): 
             let hasNull = //seq.contains(['null'])(type.a >> .s);
             cond hasNull {
                 true:
@@ -23,7 +21,6 @@ let buildTypeAnnotation = \type
         _: ''
     }
 ;
-
 
 let t = \record
 
@@ -46,12 +43,21 @@ $`
                 let aliases = .('aliases')? .a:[];
                 cond aliases {
                     []: '',
-                    _: aliases >> \. 
-                        .s + '<:' + util.transformType(field('type'))
+                    _: '\n'
+                }
+            }${
+                let field = .;
+                let aliases = .('aliases')? .a:[];
+                cond aliases {
+                    []: '',
+                    _: aliases >> \. '\t' + .s 
+                        + ' <: ' + util.transformType(field('type')) 
+                        + util.prettyAnnotations(['alias_of="'+ field('name').s +'"'])
                 }::
             }
         `)::
     }    
+
 ${
 let aliases = record('aliases')? .a:[]; 
 aliases >> ($`

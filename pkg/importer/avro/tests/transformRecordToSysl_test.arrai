@@ -1,18 +1,23 @@
 //test.assert.equal(
-`!record PartyAccountRelationship[namespace="com.anzx"]:
-    	@description="Party account relationship."
+`!record PartyAccountRelationship[namespace="com.anzx", doc="Party account relationship."]:
     	performedAction <: PerformedAction
-    	relationshipType <: string:
-		    @description="This would be the business key for uniquely identifying a Party-Account relation"
-    	startDate <: ['string[~null]', 'string']:
-		    @description="Relationship start date"
-    	endDate <: ['string[~null]', 'string']:
-		    @description="Relationship end date"
+    	relationshipType <: string[doc="This would be the business key for uniquely identifying a Party-Account relation"]
+    	startDate <: string?[doc="Relationship start date", default="null"]
+    	endDate <: string?[union=['string', 'null'], doc="Relationship end date", default="null"]
+    	closeDate <: StringInt?[doc="Relationship close date", default="null"]
+    	issueDate <: StringInt?[union=['string', 'null', 'int'], doc="Relationship issue date", default="null"]
+    	updateDate <: StringInt[doc="Relationship update date", default="null", order="ascending"]
+	updateDate1 <: StringInt[alias_of="updateDate"]
+            	updateDate2 <: StringInt[alias_of="updateDate"]
+    	tagList <: sequence of string
+    	tagMap <: sequence of     
+
 !alias P1:
     PartyAccountRelationship
 
 !alias P2:
     PartyAccountRelationship
+
 `,
 //{./testHelper}.avroTransform(//{./../transformRecordToSysl}, 'record.avsc')
 )

@@ -59,8 +59,25 @@
                 "int"
             ],
             "default": null,
+            "order": "ascending",
             "doc": "Relationship update date",
             "aliases": ["updateDate1", "updateDate2"]
+        },
+        {
+            "name": "tagList",
+            "type": {
+                "type" : "array",
+                "items": "string"
+            },
+            "default": []
+        },
+        {
+            "name": "tagMap",
+            "type": {
+                "type" : "map",
+                "items": "string"
+            },
+            "default": {}
         }
     ]
 }
