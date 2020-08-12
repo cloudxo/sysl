@@ -24,6 +24,30 @@ let rec extraRecords = \schema
       //rel.union(types >> cond . {{"name": (s: name), ...}:.} => .@item => extraRecords(.))
 };
 
+# Extra type union
+let rec extraTypeUnions = \schema
+  cond schema {
+    (a:[...]):
+      {schema.a} | //rel.union(
+        schema.a => .@item => \.
+          cond . {
+              {'type': (s: 'record'), "fields": (a : fields), ...}:
+                //rel.union(fields => extraTypeUnions(.@item("type"))),
+              {'type': (s: 'array'), 'items': {'type': (s: 'record'), "fields": (a : fields), ...}, ...}: # record array
+                //rel.union(fields => extraTypeUnions(.@item("type"))),
+              {'type': (s: 'map'), 'items': {'type': (s: 'record'), "fields": (a : fields), ...}, ...}: # record map
+                //rel.union(fields => extraTypeUnions(.@item("type"))),
+          }
+        ),
+    {'type': (s: 'record'), "fields": (a : fields), ...}:
+      //rel.union(fields => extraTypeUnions(.@item("type"))),
+    {'type': (s: 'array'), 'items': {'type': (s: 'record'), "fields": (a : fields), ...}, ...}: # record array
+      //rel.union(fields => extraTypeUnions(.@item("type"))),
+    {'type': (s: 'map'), 'items': {'type': (s: 'record'), "fields": (a : fields), ...}, ...}: # record map
+      //rel.union(fields => extraTypeUnions(.@item("type"))),
+  }
+;
+
 let avroTransform = \schema \appName \packageName
   # Load Avro spec whose format is protobuf 
   let schema = //encoding.json.decode(//os.file(schema));
@@ -37,9 +61,9 @@ $'
 ${appName}:
   @package="${packageName}"
   # Types
-  ${extraRecords(schema) => //{./transformRecordToSysl}(.) orderby . ::\n}
+  ${extraRecords(schema) => //{./transformRecordToSysl}(.) orderby . ::}
   # Unions
-
+  ${extraTypeUnions(schema) => //{./transformUnionToSysl}(.) orderby . ::}
   # Enums
   ${extraEnums(schema) => //{./transformEnumToSysl}(.) orderby . ::}
 '

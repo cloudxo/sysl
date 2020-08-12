@@ -1,0 +1,197 @@
+{
+  "namespace": "com.anz.ocv.pe",
+  "name": "OCVEvent",
+  "type": "record",
+  "fields": [
+    {
+      "name": "performedAction",
+      "type": {
+        "type": "enum",
+        "namespace": "com.example",
+        "doc": "hello",
+        "name": "PerformedAction",
+        "symbols": [
+          "add",
+          "update",
+          "delete",
+          "none"
+        ],
+        "default": "add",
+        "aliases": [
+          "E1",
+          "E2"
+        ]
+      }
+    },
+    {
+      "name": "header",
+      "type": {
+        "type": "record",
+        "name": "Header",
+        "fields": [
+          {
+            "name": "eventUUID",
+            "type": {
+              "type": "record",
+              "name": "EventUUID",
+              "fields": [
+                {
+                  "name": "id",
+                  "type": "string"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "body",
+      "type": [
+        "null",
+        {
+          "type": "record",
+          "name": "SurvivorParty",
+          "doc": "Survivor Party Details for the Victim party",
+          "fields": [
+            {
+              "name": "ocvID",
+              "type": "string",
+              "doc": "A unique OCV identifier for the surviving party"
+            },
+            {
+              "name": "subject",
+              "type": {
+                "name": "Subject",
+                "type": "record",
+                "fields": [
+                  {
+                    "name": "id",
+                    "type": "string"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "mapRecords",
+      "type": {
+        "type":"map",
+        "items": {
+          "type": "record",
+          "name": "MapRecord",
+          "fields": [
+            {"name": "id", "type": "string"}
+          ]
+        } 
+      },
+      "default": {} 
+    },
+    {
+      "name": "partyAccountRelationships",
+      "type": {
+        "type": "array",
+        "items": {
+          "name": "PartyAccountRelationship",
+          "type": "record",
+          "namespace": "com.anzx",
+          "aliases": [
+            "P1",
+            "P2"
+          ],
+          "doc": "Party account relationship.",
+          "fields": [
+            {
+              "name": "performedAction",
+              "type": "PerformedAction"
+            },
+            {
+              "name": "relationshipType",
+              "type": "string",
+              "doc": "This would be the business key for uniquely identifying a Party-Account relation"
+            },
+            {
+              "name": "startDate",
+              "type": [
+                "null",
+                "string"
+              ],
+              "default": null,
+              "doc": "Relationship start date"
+            },
+            {
+              "name": "endDate",
+              "type": [
+                "string",
+                "null"
+              ],
+              "default": null,
+              "doc": "Relationship end date"
+            },
+            {
+              "name": "closeDate",
+              "type": [
+                "null",
+                "string",
+                "int"
+              ],
+              "default": null,
+              "doc": "Relationship close date"
+            },
+            {
+              "name": "issueDate",
+              "type": [
+                "string",
+                "null",
+                "int"
+              ],
+              "default": null,
+              "doc": "Relationship issue date"
+            },
+            {
+              "name": "updateDate",
+              "type": [
+                "string",
+                "int"
+              ],
+              "default": null,
+              "order": "ascending",
+              "doc": "Relationship update date",
+              "aliases": [
+                "updateDate1",
+                "updateDate2"
+              ]
+            },
+            {
+              "name": "tagList",
+              "type": {
+                "type": "array",
+                "items": "string"
+              },
+              "default": []
+            },
+            {
+              "name": "tagMap",
+              "type": {
+                "type": "map",
+                "items": "string"
+              },
+              "default": {}
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "tagList",
+      "type": {
+        "type": "array",
+        "items": "string"
+      },
+      "default": []
+    }
+  ]
+}

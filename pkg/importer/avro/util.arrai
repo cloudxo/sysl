@@ -36,19 +36,18 @@ let buildUnionTypes = \types
     unionTypes with unionType
 ;
 
-# Get type names from types which looks like:
+# Get type name from types which looks like:
 # ['null', 'string'], ['string', 'int'] or ['null', {'type':'record', ...}] etc.
-let getTypeNames = \types
-    types >> \t
-        cond t {
-            (:s): t,
-            {'type':type, ...}: (s : t('name').s) 
-        }
+let getTypeName = \t
+    cond t {
+        (:s): t,
+        {'type':type, ...}: (s : t('name').s),
+    }
 ;
 
 # 
 let combineTypes = \types
-    let types = getTypeNames(types) >> .s;
+    let types = types >> getTypeName(.) >> .s;
     cond //seq.contains(['null'])(types) {
         true:
             cond //seq.has_prefix(['null'])(types) {
@@ -97,5 +96,7 @@ let util = (
     : prettyAnnotations,
     : transformType,
     : getAnnotationS,
+    : getTypeName,
+    : combineTypes,
 );
 util

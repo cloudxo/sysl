@@ -1,0 +1,14 @@
+# Transform Avro union to Sysl union
+let util = //{./util};
+
+let t = \union
+$'
+!union ${util.combineTypes(union)}
+${
+    union >> \item
+        cond item {
+            (:s): cond item.s {'null':'', _:item.s},
+            {'name': name, ...}: name.s  
+        }::
+}
+';t

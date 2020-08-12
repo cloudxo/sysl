@@ -3,6 +3,7 @@ let util = //{./util};
 
 # Build type annotation like [union=["int32", "null"]]
 let buildTypeAnnotation = \type
+    let type = util.getTypeName(type).s;
     cond type {
         (:a): 
             let hasNull = //seq.contains(['null'])(type.a >> .s);
