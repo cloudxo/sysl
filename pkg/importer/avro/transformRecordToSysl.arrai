@@ -25,14 +25,22 @@ let buildTypeAnnotation = \type
 let t = \record
 
 $`
-!record ${record('name').s}${util.prettyAnnotations([util.getAnnotationS(record, 'namespace'), util.getAnnotationS(record, 'doc')])}:
+${
+    cond record {
+        {'isMap':(s: 'true'), ...}: 
+    $'
+    !type String${record('name').s}[json_map_key="key"]:
+        key <: string
+        value <: ${record('name').s}
+    ', _:''}
+}!type ${record('name').s}${util.prettyAnnotations([util.getAnnotationS(record, 'namespace'), util.getAnnotationS(record, 'doc')])}:
     ${
         let fields = record('fields')? .a:[]; 
         fields >> ($`
             ${'\t'}${.('name').s} <: ${util.transformType(.('type'))}${
                 util.prettyAnnotations(
                     [
-                        buildTypeAnnotation(.('type')),
+                        #buildTypeAnnotation(.('type')),
                         util.getAnnotationS(., 'doc'),
                         let default = .('default')?:""; cond default {"": "", ():'default="null"', _:""},
                         util.getAnnotationS(., 'order'),

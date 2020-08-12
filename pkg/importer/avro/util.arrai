@@ -23,16 +23,12 @@ let transformPrimitiveType = \type
         'double': 'float64',
         'bytes': "bytes",
         'string': 'string',
-        _: "NotPrimitive"               
+        _: "NotPrimitiveError"              
     }
 ;
 
-# Transform Avro complex types to Sysl ones
-# TODO load all complex types
-let transformComplexType = \type
-    cond type {
-        'PerformedAction': 'PerformedAction'
-    }
+let transformLogicalTypes = \type
+type
 ;
 
 let buildUnionTypes = \types
@@ -40,8 +36,19 @@ let buildUnionTypes = \types
     unionTypes with unionType
 ;
 
+# Get type names from types which looks like:
+# ['null', 'string'], ['string', 'int'] or ['null', {'type':'record', ...}] etc.
+let getTypeNames = \types
+    types >> \t
+        cond t {
+            (:s): t,
+            {'type':type, ...}: (s : t('name').s) 
+        }
+;
+
 # 
 let combineTypes = \types
+    let types = getTypeNames(types) >> .s;
     cond //seq.contains(['null'])(types) {
         true:
             cond //seq.has_prefix(['null'])(types) {
@@ -54,7 +61,7 @@ let combineTypes = \types
                 _: # types is ['string', 'null', ...]
                     cond types count {
                         2: //seq.concat(types where .@item != 'null' rank (:.@)) + '?',
-                        _: //seq.concat(types where .@item != 'null' rank (:.@) >> //str.title(.)) + $'?'
+                        _: //seq.concat(types where .@item != 'null' rank (:.@) >> //str.title(.)) + '?'
                     }
             }
         ,
@@ -64,24 +71,24 @@ let combineTypes = \types
 
 let transformType = \type
     cond type {
-        (:s):
-            let primitive = transformPrimitiveType(type.s);
+        # (s: 'string') etc.
+        (s: typeName):
+            let primitive = transformPrimitiveType(typeName);
             cond primitive {
-                'NotPrimitive': transformComplexType(type.s), 
-                _: cond primitive {
-                    "null": "string[~null]",
-                    _: primitive
-                }
+                "null": "string[~null]",
+                _: primitive
             },
-        (:a):
-            combineTypes(type.a >> .s), # [(s: 'null'), (s: 'string')] to ['null', 'string']
-        _:
+        (a: typeArray):
+            # type can be ['null', 'string'], ['string', 'int'] or ['null', {'type':'record', ...}] etc.
+            # [(s: 'null'), (s: 'string')] to ['null', 'string']
+            combineTypes(typeArray), 
+        {'type': typeName, ...}:
             # it is array, map or fixed
-            cond type('type').s {
-                'array': 'sequence of ' + type('items').s,
-                'map': 'sequence of ',
+            cond typeName.s {
+                'array': 'sequence of ' + cond type {{'items': {'name': name, ...}, ...}: name.s, _: type('items').s},
+                'map': 'set of ' + cond type {{'items': {'name': name, ...}, ...}: 'String' + name.s + 'Item', _: type('items').s},
                 'fixed': 'fixed',
-                _: "NONE" 
+                _: type('name').s
             },
     }
 ;

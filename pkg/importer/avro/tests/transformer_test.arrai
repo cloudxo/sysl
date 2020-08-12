@@ -1,2 +1,2 @@
-//{./../transformer}("fabric-entitlements.avsc", "Avro", "com.anzx")
-# avroTransform("./tests/nested.avsc", "Avro", "com.anzx")
+#//{./../transformer}("fabric-entitlements.avsc", "Avro", "com.anzx")
+//{./../transformer}("complex.avsc", "Avro", "com.anzx")
