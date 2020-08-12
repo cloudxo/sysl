@@ -28,9 +28,12 @@ $'
 ##                                      ##
 ##########################################
 ${appName}:
-${'\t'}@package="${packageName}"
-${'\t'}${extraEnums(schema) => //{./transformEnumToSysl}(.)}
-';
+  @package="${packageName}"
+  # Types
 
-avroTransform("./tests/fabric-entitlements.avsc", "Avro", "com.anzx")
-# avroTransform("./tests/nested.avsc", "Avro", "com.anzx")
+  # Unions
+
+  # Enums
+  ${extraEnums(schema) => //{./transformEnumToSysl}(.) orderby . ::}
+'
+;avroTransform
